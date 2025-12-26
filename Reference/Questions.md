@@ -1,18 +1,18 @@
-### 1. React Basics
+## 1. React Basics
 
-* What is React?
-* Why is React used?
-* What are the main features of React?
-* What is JSX?
-* Why JSX is faster than normal JavaScript?
-* What is Virtual DOM?
+* [What is React?](#What_is_React)
+* [Why is React used?](#Why_is_React_used)
+* [What are the main features of React?](#main_features_of_React)
+* [What is JSX?](#What_is_JSX)
+* [Why JSX is faster than normal JavaScript?](#JSX_faster_than_normal)
+* [What is Virtual DOM?](#What_is_Virtual_DOM)
 * Difference between Virtual DOM and Real DOM
 * How React works internally?
 * What is `create-react-app`?
 
 ---
 
-### 2. Components
+## 2. Components
 
 * What is a component in React?
 * Difference between Functional and Class components
@@ -24,7 +24,7 @@
 
 ---
 
-### 3. Props
+## 3. Props
 
 * What are props?
 * Are props mutable or immutable?
@@ -36,7 +36,7 @@
 
 ---
 
-### 4. State
+## 4. State
 
 * What is state in React?
 * Why state is needed?
@@ -48,7 +48,7 @@
 
 ---
 
-### 5. Events
+## 5. Events
 
 * How event handling works in React?
 * Difference between React events and DOM events
@@ -58,7 +58,7 @@
 
 ---
 
-### 6. Conditional Rendering
+## 6. Conditional Rendering
 
 * What is conditional rendering?
 * Different ways to do conditional rendering
@@ -68,7 +68,7 @@
 
 ---
 
-### 7. Lists & Keys
+## 7. Lists & Keys
 
 * How to render lists in React?
 * Why keys are important?
@@ -78,7 +78,7 @@
 
 ---
 
-### 8. Hooks (Core)
+## 8. Hooks (Core)
 
 * What are hooks?
 * Why hooks were introduced?
@@ -91,7 +91,7 @@
 
 ---
 
-### 9. Hooks (Advanced)
+## 9. Hooks (Advanced)
 
 * What is `useContext`?
 * What problem does `useContext` solve?
@@ -105,7 +105,7 @@
 
 ---
 
-### 10. Lifecycle (Conceptual)
+## 10. Lifecycle (Conceptual)
 
 * What are React lifecycle methods?
 * Mounting phase methods
@@ -116,7 +116,7 @@
 
 ---
 
-### 11. Forms
+## 11. Forms
 
 * Controlled vs Uncontrolled components
 * How to handle form input in React?
@@ -127,7 +127,7 @@
 
 ---
 
-### 12. Styling in React
+## 12. Styling in React
 
 * Different ways to style React components
 * Inline styling pros and cons
@@ -138,7 +138,7 @@
 
 ---
 
-### 13. Routing (React Router)
+## 13. Routing (React Router)
 
 * What is React Router?
 * Difference between BrowserRouter and HashRouter
@@ -151,7 +151,7 @@
 
 ---
 
-### 14. Performance Optimization
+## 14. Performance Optimization
 
 * How to optimize React performance?
 * What is React.memo?
@@ -162,7 +162,7 @@
 
 ---
 
-### 15. State Management
+## 15. State Management
 
 * What is lifting state up?
 * What is Context API?
@@ -173,7 +173,7 @@
 
 ---
 
-### 16. Redux (Core)
+## 16. Redux (Core)
 
 * What is Redux?
 * Core principles of Redux
@@ -186,7 +186,7 @@
 
 ---
 
-### 17. API & Data Handling
+## 17. API & Data Handling
 
 * How to fetch data in React?
 * Axios vs Fetch
@@ -197,7 +197,7 @@
 
 ---
 
-### 18. Security & Best Practices
+## 18. Security & Best Practices
 
 * How to prevent XSS in React?
 * Is React secure by default?
@@ -207,7 +207,7 @@
 
 ---
 
-### 19. Testing
+## 19. Testing
 
 * Why testing is important?
 * Types of testing in React
@@ -217,7 +217,7 @@
 
 ---
 
-### 20. Build & Deployment
+## 20. Build & Deployment
 
 * What happens during React build?
 * Development vs production build
