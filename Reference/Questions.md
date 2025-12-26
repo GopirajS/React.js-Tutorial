@@ -1,14 +1,4 @@
-## 1. React Basics
 
-* [What is React?](#What_is_React)
-* [Why is React used?](#Why_is_React_used)
-* [What are the main features of React?](#main_features_of_React)
-* [What is JSX?](#What_is_JSX)
-* [Why JSX is faster than normal JavaScript?](#JSX_faster_than_normal)
-* [What is Virtual DOM?](#What_is_Virtual_DOM)
-* Difference between Virtual DOM and Real DOM
-* How React works internally?
-* What is `create-react-app`?
 
 ---
 
