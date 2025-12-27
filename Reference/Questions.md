@@ -1,16 +1,5 @@
 
 
-## 3. Props
-
-* What are props?
-* Are props mutable or immutable?
-* Difference between props and state
-* How to pass data from parent to child?
-* How to pass data from child to parent?
-* What is prop drilling?
-* How to avoid prop drilling?
-
----
 
 ## 4. State
 
