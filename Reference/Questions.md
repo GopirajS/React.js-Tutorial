@@ -1,18 +1,5 @@
 
 
-
-## 4. State
-
-* What is state in React?
-* Why state is needed?
-* Difference between state and props
-* How to update state correctly?
-* Why state updates are asynchronous?
-* What happens if state is mutated directly?
-* How to manage multiple states?
-
----
-
 ## 5. Events
 
 * How event handling works in React?
