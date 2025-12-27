@@ -86,6 +86,24 @@
 
 ---
 
+
+## 6. Conditional Rendering
+
+
+* [What is conditional rendering?](#Conditional_Rendering)
+
+* Different ways to do conditional rendering
+
+* When to use ternary operator in JSX?
+
+* When to use logical AND (`&&`)?
+
+* How to render components conditionally?
+
+
+---
+
+
 <h1 style="text-align:center;" > React Basics</h1>
 
 <span style="color:green;">================================================================ </span>
@@ -904,3 +922,46 @@ function Form() {
 
 📌 **Query-style answer:**
 **Default browser behavior in React is prevented using `event.preventDefault()`.**
+
+
+<span style="color:green;">================================================================ </span>
+
+
+<h1 style="text-align:center;" > Conditional Rendering </h1>
+
+
+<span style="color:green;">================================================================ </span>
+
+<h2 id="Conditional_Rendering" style="color:green"> 🧩 What is Conditional Rendering in React? </h2>
+
+![img](./Reference/Imgs/conditional_rendering.png)
+
+🔀 **Conditional rendering** means **showing UI based on a condition**.
+
+🔹 UI changes depending on state or props
+🔹 Similar to conditions in JavaScript (`if`, `&&`, `?:`)
+
+---
+
+### ✅ Simple Example
+
+```jsx
+function LoginStatus({ isLoggedIn }) {
+  return (
+    <h1>
+      {isLoggedIn ? "Welcome User" : "Please Login"}
+    </h1>
+  );
+}
+```
+
+🔹 If `isLoggedIn` is `true` → shows **Welcome User**
+🔹 If `isLoggedIn` is `false` → shows **Please Login**
+
+---
+
+📌 **Query-style answer:**
+**Conditional rendering is used to display different UI based on conditions.**
+
+
+<span style="color:green;">================================================================ </span>

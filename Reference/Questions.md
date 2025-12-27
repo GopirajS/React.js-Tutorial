@@ -1,13 +1,5 @@
 
 
-## 6. Conditional Rendering
-
-* What is conditional rendering?
-* Different ways to do conditional rendering
-* When to use ternary operator in JSX?
-* When to use logical AND (`&&`)?
-* How to render components conditionally?
-
 ---
 
 ## 7. Lists & Keys
