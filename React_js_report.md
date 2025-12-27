@@ -21,6 +21,25 @@
 
 ---
 
+## 2. Components
+
+
+* [What is a component in React?](#What_is_a_Component_in_React)
+
+* [Difference between Functional and Class components](#Functional_and_Class_components)
+
+* [What is component composition?](#Component_Composition)
+
+* Why Functional components are preferred now?
+
+* What is component reusability?
+
+* What is a pure component?
+
+* What is memoized component?
+
+---
+
 <h1 style="text-align:center;" > React Basics</h1>
 
 <span style="color:green;">================================================================ </span>
@@ -167,4 +186,97 @@ HTML + JavaScript together in one place
 
 📌 In simple words:
 **React updates only what changes instead of reloading the whole page.**
+
+
+<span style="color:green;">================================================================ </span>
+
+
+<h1 style="text-align:center;" > Components </h1>
+
+![image](./Reference/Imgs/component.png)
+
+<span style="color:green;">================================================================ </span>
+
+<h2 id="What_is_a_Component_in_React" style="color:green"> 🧩 What is a Component in React? </h2>
+
+📦 A **component** is a **small, reusable piece of UI** in React.
+
+🔹 Components can be **buttons, forms, headers, pages**, etc.
+
+🔹 Each component has its **own logic and UI**
+
+🔹 Components can be **reused** multiple times
+
+📌 Example idea:
+One website = many small components
+
+📌 In simple words:
+**A component is a reusable building block of the React UI.**
+
+
+<span style="color:green;">================================================================ </span>
+
+<h2 id="Functional_and_Class_components" style="color:green"> 🆚 Difference between Functional and Class Components
+ </h2>
+
+![image](./Reference/Imgs/diff_function_class_component.png)
+
+
+| 🔹 Functional Component                  | 🔸 Class Component            |
+| ---------------------------------------  | ----------------------------- |
+| 🧩 Simple JavaScript function            | 🏗️ JavaScript class           |
+| ⚛️ Uses **Hooks** (useState, useEffect)  | 🔁 Uses **lifecycle methods** |
+| ✍️ Less code, easy to read               | 📄 More code, complex         |
+| 🚀 Better performance                    | 🐌 Slightly slower            |
+| ✅ Most used in modern React             | ❌ Less used now              |
+
+📌 In simple words:
+**Functional components are simpler and preferred over class components in modern React.**
+
+
+
+<span style="color:green;">================================================================ </span>
+
+<h2 id="Component_Composition" style="color:green"> What is Component Composition? </h2>
+
+![image](./Reference/Imgs/component_composition.png)
+
+🧱 **Component composition** means **building components by combining other components**.
+
+🔹 One component can **contain** other components
+🔹 Helps create **clean, reusable, and flexible UI**
+🔹 Avoids code duplication
+
+📌 Example idea:
+Page = Header + Sidebar + Content + Footer
+
+📌 In simple words:
+**Component composition is creating complex UI by joining small components together.**
+
+
+```jsx
+function Header() {
+  return <h1>My Website</h1>;
+}
+
+function Footer() {
+  return <p>© 2025</p>;
+}
+
+function Page() {
+  return (
+    <div>
+      <Header />
+      <p>Welcome to my website</p>
+      <Footer />
+    </div>
+  );
+}
+```
+
+🔹 **Header** and **Footer** are small components
+🔹 **Page** component **uses (composes)** them together
+
+📌 In simple words:
+**Using components inside another component is called component composition.**
 

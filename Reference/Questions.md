@@ -1,19 +1,5 @@
 
 
----
-
-## 2. Components
-
-* What is a component in React?
-* Difference between Functional and Class components
-* Why Functional components are preferred now?
-* What is component reusability?
-* What is component composition?
-* What is a pure component?
-* What is memoized component?
-
----
-
 ## 3. Props
 
 * What are props?
