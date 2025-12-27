@@ -1,28 +1,4 @@
 
-
----
-
-## 7. Lists & Keys
-
-* How to render lists in React?
-* Why keys are important?
-* What happens if keys are not used?
-* Why index as key is not recommended?
-* How React uses keys internally?
-
----
-
-## 8. Hooks (Core)
-
-* What are hooks?
-* Why hooks were introduced?
-* Rules of hooks
-* What is `useState`?
-* What is `useEffect`?
-* Difference between `useEffect` and lifecycle methods
-* Cleanup function in `useEffect`
-* Dependency array behavior
-
 ---
 
 ## 9. Hooks (Advanced)

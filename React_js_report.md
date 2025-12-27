@@ -100,6 +100,41 @@
 
 * How to render components conditionally?
 
+---
+
+## 7. Lists & Keys
+
+
+* [How to render lists in React?](#Render_Lists_in_React)
+
+* Why keys are important?
+
+* What happens if keys are not used?
+
+* [Why index as key is not recommended?](#index_is_not_a_key)
+
+* How React uses keys internally?
+
+---
+
+## 8. Hooks (Core)
+
+
+* [What are hooks?](#Hooks_in_React)
+
+* [Why hooks were introduced?](#Why_hooks_were_introduced)
+
+* [Rules of hooks](#Rules_of_Hooks)
+
+* [What is `useState`?](What_is_useState)
+
+* [What is `useEffect`?](#What_is_useEffect)
+
+* Difference between `useEffect` and lifecycle methods
+
+* Cleanup function in `useEffect`
+
+* Dependency array behavior
 
 ---
 
@@ -965,3 +1000,484 @@ function LoginStatus({ isLoggedIn }) {
 
 
 <span style="color:green;">================================================================ </span>
+
+<h1 style="text-align:center;" > Conditional Rendering </h1>
+
+<span style="color:green;">================================================================ </span>
+
+<h2 id="Render_Lists_in_React" style="color:green"> 🧩 How to Render Lists in React?</h2>
+
+
+👉 Use **`map()`** function to loop over data and display UI.
+
+---
+
+### ✅ Simple Example
+
+```jsx
+function List() {
+  const items = ["React", "Angular", "Vue"];
+
+  return (
+    <ul>
+      {items.map((item, index) => (
+        <li key={index}>{item}</li>
+      ))}
+    </ul>
+  );
+}
+```
+
+🔹 `map()` creates elements from array
+🔹 `key` helps React identify items
+
+---
+
+📌 **Query-style answer:**
+**Lists in React are rendered using the map() function.**
+
+
+<span style="color:green;">================================================================ </span>
+
+<h2 id="index_is_not_a_key" style="color:green"> Why index as key is not recommended? </h2>
+
+
+Got it 👍 You want a **clear example showing item values** so it’s easy to understand.
+
+---
+
+🧠 **Why index as key is NOT recommended (with clear values)**
+
+### ❌ Using index as key
+
+```jsx
+function List() {
+  const items = ["Apple", "Banana", "Mango"];
+
+  return (
+    <ul>
+      {items.map((item, index) => (
+        // index used as key ❌
+        <li key={index}>{item}</li>
+      ))}
+    </ul>
+  );
+}
+```
+
+👉 Initial render:
+
+```
+0 → Apple
+1 → Banana
+2 → Mango
+```
+
+❌ Now remove **Apple**
+
+👉 New list:
+
+```
+0 → Banana
+1 → Mango
+```
+
+🔴 **Problem:**
+React thinks:
+
+* Banana was Apple
+* Mango was Banana
+
+This causes **wrong UI updates**
+
+---
+
+### ✅ Correct way (using item value / id as key)
+
+```jsx
+function List() {
+  const items = ["Apple", "Banana", "Mango"];
+
+  return (
+    <ul>
+      {items.map(item => (
+        // item value used as key ✅
+        <li key={item}>{item}</li>
+      ))}
+    </ul>
+  );
+}
+```
+
+🔹 Keys stay **same even if order changes**
+🔹 React updates UI **correctly**
+
+---
+
+📌 **Query-style answer:**
+**Index as key is not recommended because changing list order changes indexes, causing incorrect UI rendering.**
+
+
+<span style="color:green;">================================================================ </span>
+
+
+<h1 style="text-align:center;" > Hooks (Core) </h1>
+
+
+<span style="color:green;">================================================================ </span>
+
+<h2 id="Hooks_in_React" style="color:green"> 🧩 What Are Hooks in React? </h2>
+
+![img](./Reference/Imgs/hook_in_react.png)
+
+🪝 **Hooks** are **special functions** that let you use **state and other React features** in **functional components**.
+
+🔹 Introduced in **React 16.8**
+🔹 Remove the need for class components
+🔹 Make code **simpler and reusable**
+
+📌 Common Hooks:
+
+* `useState` – manage state
+* `useEffect` – handle side effects
+* `useContext` – use context data
+
+📌 **Query-style answer:**
+**Hooks allow functional components to use state and lifecycle features.**
+
+🧠 **How React Uses Keys Internally?**
+
+🔑 **Keys help React identify which list items changed, added, or removed**
+
+🔹 During re-render, React compares **old list vs new list**
+🔹 It matches items using their **keys**, not positions
+🔹 Same key → React **reuses the component**
+🔹 Different key → React **creates or removes component**
+
+---
+🧩 **What Are Hooks? (With Simple Example)**
+
+🪝 **Hooks** let you use **state and React features** inside **functional components**.
+
+---
+
+### 🪝 `useState`
+
+### ✅ Simple Example
+
+```jsx
+import { useState } from "react";
+
+function Counter() {
+  // useState hook
+  const [count, setCount] = useState(0);
+
+  return (
+    <button onClick={() => setCount(count + 1)}>
+      Count: {count}
+    </button>
+  );
+}
+```
+
+🔹 `useState` is a **hook**
+🔹 `count` is state
+🔹 `setCount` updates state
+🔹 UI updates automatically
+
+📌 **Query-style answer:**
+**Hooks are functions that let functional components use state and other React features.**
+
+---
+
+### 🪝 `useEffect`
+
+🔹 Used to handle **side effects**
+🔹 Runs after component renders
+🔹 Examples: API calls, timers, DOM updates
+
+### ✅ Simple Example
+
+```jsx
+import { useEffect } from "react";
+
+function Page() {
+
+  useEffect(() => {
+    console.log("Component mounted");
+  }, []); // runs once
+
+  return <h1>Hello React</h1>;
+}
+```
+
+🔹 Runs when component loads
+
+📌 **Query-style answer:**
+**`useEffect` is used to perform side effects in functional components.**
+
+---
+
+### 🪝 `useContext`
+
+🔹 Used to **share data without prop drilling**
+🔹 Accesses data from Context API
+
+### ✅ Simple Example
+
+```jsx
+import { createContext, useContext } from "react";
+
+const NameContext = createContext();
+
+function Parent() {
+  return (
+    <NameContext.Provider value="React">
+      <Child />
+    </NameContext.Provider>
+  );
+}
+
+function Child() {
+  const name = useContext(NameContext);
+  return <h1>Hello {name}</h1>;
+}
+```
+
+🔹 No props passed through multiple components
+
+📌 **Query-style answer:**
+**`useContext` is used to access shared data from Context without prop drilling.**
+
+
+<span style="color:green;">================================================================ </span>
+
+<h2 id="Why_hooks_were_introduced" style="color:green"> 🧠 Why Hooks Were Introduced in React?</h2>
+
+Hooks were introduced to **solve problems with class components** and make React **simpler and cleaner**.
+
+---
+
+### ❌ Problems Before Hooks (Class Components)
+
+```jsx
+class Counter extends React.Component {
+  state = { count: 0 };
+
+  componentDidMount() {
+    console.log("Mounted");
+  }
+
+  render() {
+    return (
+      <button onClick={() => this.setState({ count: this.state.count + 1 })}>
+        Count: {this.state.count}
+      </button>
+    );
+  }
+}
+```
+
+🔹 More code
+🔹 `this` keyword confusion
+🔹 Hard to reuse logic
+
+---
+
+### ✅ Solution with Hooks (Functional Component)
+
+```jsx
+import { useState, useEffect } from "react";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    console.log("Mounted");
+  }, []);
+
+  return (
+    <button onClick={() => setCount(count + 1)}>
+      Count: {count}
+    </button>
+  );
+}
+```
+
+🔹 Less code
+🔹 No `this` keyword
+🔹 Logic is easy to reuse
+
+---
+
+📌 **Query-style answer:**
+**Hooks were introduced to use state and lifecycle features in functional components and simplify React code.**
+
+
+<span style="color:green;">================================================================ </span>
+
+<h2 id="Rules_of_Hooks" style="color:green"> 🧠 Rules of Hooks (With Right & Wrong Examples) </h2>
+
+
+👉 React has **2 main rules of Hooks**
+
+---
+
+## 🪝 Rule 1: Call Hooks at the Top Level
+
+❌ **Wrong Example**
+
+```jsx
+function Counter({ show }) {
+  if (show) {
+    const [count, setCount] = useState(0); // ❌ inside condition
+  }
+  return null;
+}
+```
+
+🔴 Problem:
+Hooks must not be called conditionally.
+
+---
+
+✅ **Right Example**
+
+```jsx
+function Counter({ show }) {
+  const [count, setCount] = useState(0); // ✅ top level
+
+  if (!show) return null;
+  return <p>{count}</p>;
+}
+```
+
+📌 **Rule:**
+**Always call Hooks at the top level, not inside conditions, loops, or functions.**
+
+---
+
+## 🪝 Rule 2: Call Hooks Only in React Functions
+
+❌ **Wrong Example**
+
+```jsx
+function helper() {
+  const [count, setCount] = useState(0); // ❌ not a component
+}
+```
+
+🔴 Problem:
+Hooks cannot be used in normal JS functions.
+
+---
+
+✅ **Right Example**
+
+```jsx
+function Counter() {
+  const [count, setCount] = useState(0); // ✅ React component
+  return <p>{count}</p>;
+}
+```
+
+📌 **Rule:**
+**Hooks must be used only inside React functional components or custom hooks.**
+
+---
+
+## 🪝 Custom Hook Example (Valid)
+
+```jsx
+function useCounter() {
+  const [count, setCount] = useState(0);
+  return [count, setCount];
+}
+```
+
+---
+
+📌 **Query-style answer:**
+**Hooks must be called at the top level and only inside React functional components or custom hooks.**
+
+
+
+
+<span style="color:green;">================================================================ </span>
+
+<h2 id="What_is_useState" style="color:green"> 🧩 What is `useState` in React? </h2>
+
+
+🪝 **`useState`** is a **Hook** used to **add and manage state** in functional components.
+
+🔹 It stores data that can change
+🔹 When state changes, UI **re-renders automatically**
+
+---
+
+### ✅ Proper Example
+
+```jsx
+import { useState } from "react";
+
+function Counter() {
+  // useState hook
+  const [count, setCount] = useState(0);
+
+  return (
+    <button onClick={() => setCount(count + 1)}>
+      Count: {count}
+    </button>
+  );
+}
+```
+
+🔹 `count` → state value
+🔹 `setCount` → function to update state
+🔹 `0` → initial value
+
+---
+
+📌 **Query-style answer:**
+**`useState` is a React Hook that allows functional components to store and update state.**
+
+
+
+
+
+<span style="color:green;">================================================================ </span>
+
+<h2 id=" What_is_useEffect" style="color:green"> 🧩 What is `useEffect` in React? </h2>
+
+
+🪝 **`useEffect`** is a **Hook** used to perform **side effects** in functional components.
+
+🔹 Runs after the component renders
+🔹 Used for API calls, timers, subscriptions, DOM updates
+
+---
+
+### ✅ Proper Example
+
+```jsx
+import { useEffect } from "react";
+
+function Page() {
+
+  useEffect(() => {
+    console.log("Component mounted");
+  }, []); // runs once
+
+  return <h1>Hello React</h1>;
+}
+```
+
+🔹 Effect runs when component loads
+🔹 `[]` controls when effect runs
+
+---
+
+📌 **Query-style answer:**
+**`useEffect` is used to handle side effects in functional components.**
+
+
