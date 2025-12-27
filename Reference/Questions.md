@@ -1,15 +1,5 @@
 
 
-## 5. Events
-
-* How event handling works in React?
-* Difference between React events and DOM events
-* What is synthetic event?
-* How to pass arguments to event handlers?
-* How to prevent default behavior in React?
-
----
-
 ## 6. Conditional Rendering
 
 * What is conditional rendering?

@@ -71,6 +71,20 @@
 
 ---
 
+## 5. Events
+
+
+* [How event handling works in React?](#Event_Handling_Works)
+
+* [Difference between React events and DOM events](#between_React_Events_and_DOM_Events)
+
+* [What is synthetic event?](#What_is_a_Synthetic_Event)
+
+* [How to pass arguments to event handlers?](#pass_arguments_to_event_handlers)
+
+* [How to prevent default behavior in React?](#Prevent_Default_Behavior_in_React)
+
+---
 
 <h1 style="text-align:center;" > React Basics</h1>
 
@@ -736,3 +750,157 @@ const [state, dispatch] = useReducer(reducer, initialState);
 📌 **Query-style answer:**
 **Multiple states can be managed using multiple useState hooks, a single state object, or useReducer for complex cases.**
 
+<span style="color:green;">================================================================ </span>
+
+<h1 style="text-align:center;" > Events </h1>
+
+<span style="color:green;">================================================================ </span>
+
+![img](./Reference/Imgs/event_handling.png)
+
+<h2 id="Event_Handling_Works" style="color:green"> How Event Handling Works in React? </h2>
+
+
+🔹 React uses **synthetic events** (wrapper around browser events)
+🔹 Events are written in **camelCase**
+🔹 You pass a **function**, not a function call
+
+---
+
+### ✅ Simple Example
+
+```jsx
+function Button() {
+  const handleClick = () => {
+    alert("Button clicked");
+  };
+
+  return <button onClick={handleClick}>Click Me</button>;
+}
+```
+
+🔹 `onClick` is a React event
+🔹 `handleClick` runs when button is clicked
+
+---
+
+📌 **Query-style answer:**
+**Event handling in React is done by passing functions to event handlers like onClick, onChange, etc.**
+
+
+<span style="color:green;">================================================================ </span>
+
+<h2 id="between_React_Events_and_DOM_Events" style="color:green"> 🆚 Difference between React Events and DOM Events </h2>
+
+
+| 🔹 React Events                          | 🔸 DOM Events                           |
+| ---------------------------------------- | --------------------------------------- |
+| ⚛️ Uses **Synthetic Events**             | 🌐 Uses **Native browser events**       |
+| 🧩 Works same across all browsers        | 🌍 Browser-dependent behavior           |
+| 🖊️ Written in **camelCase** (`onClick`)  | ✍️ Written in **lowercase** (`onclick`) |
+| 📌 Passed as function                    | 📎 Uses event listeners                 |
+| 🚀 Better performance (event pooling)    | 🐌 No optimization                      |
+
+📌 **Query-style answer:**
+**React events are synthetic, cross-browser, and optimized, while DOM events are native browser events.**
+
+
+
+<span style="color:green;">================================================================ </span>
+
+<h2 id="What_is_a_Synthetic_Event" style="color:green"> 🧩 What is a Synthetic Event? </h2>
+
+![img](./Reference/Imgs/synthetic_event.png)
+
+⚛️ A **Synthetic Event** is a **wrapper around the browser’s native event** used by React.
+
+🔹 Works the **same across all browsers**
+🔹 Improves **performance**
+🔹 Follows the same interface as native events
+
+---
+
+### ✅ Simple Example
+
+```jsx
+function InputBox() {
+  const handleChange = (e) => {
+    console.log(e.target.value);
+  };
+
+  return <input onChange={handleChange} />;
+}
+```
+
+🔹 `e` is a **Synthetic Event**
+🔹 React handles it internally
+
+---
+
+📌 **Query-style answer:**
+**A synthetic event is React’s cross-browser wrapper around native DOM events.**
+
+
+
+<span style="color:green;">================================================================ </span>
+
+<h2 id="pass_arguments_to_event_handlers" style="color:green"> How to Pass Arguments to Event Handlers in React? </h2>
+
+```jsx
+// Event handler example
+function Button() {
+
+  // Function that receives an argument
+  const handleClick = (msg) => {
+    alert(msg); // shows the message
+  };
+
+  return (
+    // Passing argument to the event handler using arrow function
+    <button onClick={() => handleClick("Hello React")}>
+      Click
+    </button>
+  );
+}
+```
+
+📝 **Explanation (simple):**
+🔹 `onClick` expects a **function**, not a function call
+🔹 Arrow function `() =>` is used to **pass arguments**
+🔹 `"Hello React"` is passed to `handleClick` when button is clicked
+
+📌 **Query-style answer:**
+**Arguments are passed to event handlers using arrow functions inside JSX.**
+
+
+<span style="color:green;">================================================================ </span>
+
+<h2 id="Prevent_Default_Behavior_in_React" style="color:green"> 🧩 How to Prevent Default Behavior in React? </h2>
+
+👉 Use **`event.preventDefault()`**
+
+---
+
+### ✅ Simple Example
+
+```jsx
+function Form() {
+
+  const handleSubmit = (e) => {
+    e.preventDefault(); // prevents page refresh
+    alert("Form submitted");
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
+```
+
+🔹 `e` is a **Synthetic Event**
+🔹 `preventDefault()` stops browser default action
+
+📌 **Query-style answer:**
+**Default browser behavior in React is prevented using `event.preventDefault()`.**
