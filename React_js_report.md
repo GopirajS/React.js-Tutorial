@@ -141,6 +141,8 @@
 
 <h1 style="text-align:center;" > React Basics</h1>
 
+![img](./Reference/Imgs/all_consepts.png)
+
 <span style="color:green;">================================================================ </span>
 
 <h2 id="What_is_React" style="color:green">⚛️ What is React?</h2>
@@ -605,8 +607,11 @@ function GrandChild() {
 
 🧠 **State** is used to **store and manage data inside a component**.
 
+
 🔹 State can **change over time**
+
 🔹 When state changes, **UI re-renders**
+
 🔹 State is **local to the component**
 
 ---
@@ -642,8 +647,11 @@ function Counter() {
 
 
 ✅ To **store dynamic data**
+
 ✅ To **update UI automatically** when data changes
+
 ✅ To **handle user interactions** (clicks, input, etc.)
+
 ✅ To **control component behavior**
 
 📌 Example idea:
@@ -702,11 +710,15 @@ setCount(prevCount => prevCount + 1);
 
 
 🔹 React **does not update state immediately**
+
 🔹 It **groups (batches) multiple state updates together**
+
 🔹 This improves **performance** and avoids unnecessary re-renders
 
 🚀 **What happens internally?**
+
 ✔ React schedules state updates
+
 ✔ Updates UI in one efficient render
 
 ---
@@ -814,8 +826,11 @@ const [state, dispatch] = useReducer(reducer, initialState);
 <h2 id="Event_Handling_Works" style="color:green"> How Event Handling Works in React? </h2>
 
 
+
 🔹 React uses **synthetic events** (wrapper around browser events)
+
 🔹 Events are written in **camelCase**
+
 🔹 You pass a **function**, not a function call
 
 ---
