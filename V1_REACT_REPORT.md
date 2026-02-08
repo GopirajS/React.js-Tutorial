@@ -1,3 +1,6 @@
+<hr style="border: 2px solid green;">
+
+
 ## 1. React Basics
 
 * [What is React?](#What_is_React)
@@ -8,7 +11,7 @@
 * [What is Virtual DOM?](#What_is_Virtual_DOM)
 * [Difference between Virtual DOM and Real DOM](#Virtual_DOM_and_Real_DOM)
 * [How React works internally?](#How_React_works_internally)
-* What is Reconciliation,why Reconciliation is needed?
+* [What is Reconciliation,why Reconciliation is needed?](#What_is_Reconciliation)
 
 ---
 
@@ -17,10 +20,11 @@
 * [What is a component in React?](#What_is_a_Component_in_React)
 * [Difference between Functional and Class components](#Functional_and_Class_components)
 * [What is component composition?](#Component_Composition)
-* Why Functional components are preferred now?
-* What is component reusability?
-* What is a pure component?
-* What is memoized component?
+* [Why Functional components are preferred now?](#Functional_Components)
+* [What is component reusability?](#What_is_component_reusability)
+* [What is a pure component?](#What_is_a_pure_component)
+* [What is Shallow Comparison?](#What_is_Shallow_Comparison?)
+* [What is memoized component?](#What_is_a_Memoized_Component)
 
 ---
 
@@ -82,16 +86,10 @@
 * [What are hooks?](#Hooks_in_React)
 * [Why hooks were introduced?](#Why_hooks_were_introduced)
 * [Rules of hooks](#Rules_of_Hooks)
-* [What is `useState`?](What_is_useState)
-* [What is `useEffect`?](#What_is_useEffect)
 
 ---
 
-## 9. Hooks
-
-* What are hooks?
-* Why hooks were introduced?
-* Rules of hooks
+## 9. Hooks (Detailed)
 
 ### Basic Hooks
 
@@ -154,10 +152,9 @@
 
 ### Custom Hooks
 
-* What is custom hook?
+* What is a custom hook?
 * Why custom hooks are created?
 * When to create custom hooks?
-
 
 ---
 
@@ -183,25 +180,14 @@
 
 ---
 
-## 12. Styling in React
-
-* Different ways to style React components
-* Inline styling pros and cons
-* CSS Modules
-* Styled Components
-* How className works in JSX?
-* Conditional styling in React
-
----
-
 ## 13. Routing (React Router)
 
-* [What is React Router?](#What_is_React_Router)
-* [Difference between BrowserRouter and HashRouter](#BrowserRouter_and_HashRouter)
+* What is React Router?
+* Difference between BrowserRouter and HashRouter
 * What is Route?
 * What is Link vs NavLink?
-* What is useParams?
-* What is useNavigate?
+* What is `useParams`?
+* What is `useNavigate`?
 * Protected routes concept
 * Lazy loading routes
 
@@ -210,7 +196,7 @@
 ## 14. Performance Optimization
 
 * How to optimize React performance?
-* What is React.memo?
+* What is `React.memo`?
 * What causes unnecessary re-renders?
 * How to prevent re-rendering?
 * What is code splitting?
@@ -271,24 +257,24 @@
 * Environment variables in React
 * How `.env` works?
 
+---
 
 ## Rendering
 
 * What is Rendering?
-* Why Re-render happens?
-* What causes Re-render?
-* How to prevent unnecessary Re-render?
+* Why re-render happens?
+* What causes re-render?
+* How to prevent unnecessary re-render?
 
 ---
-
 
 <h1 style="text-align:center;" > React Basics</h1>
 
 ![img](./Reference/Imgs/all_consepts.png)
 
-<span style="color:green;">================================================================ </span>
+<hr style="border: 2px solid green;">
 
-<h2 id="What_is_React" style="color:green">⚛️ What is React?</h2>
+<h2 id="What_is_React" style="color:green; text-align:center;">⚛️ What is React?</h2>
 
  **React** is a **JavaScript library** used to build **user interfaces**, mainly for **single-page applications**.
 
@@ -303,10 +289,9 @@
 **React makes building interactive and dynamic websites easier and faster.**
 
 
+<hr style="border: 2px solid green;">
 
-<span style="color:green;">================================================================ </span>
-
-<h2 id="Why_is_React_used" style="color:green"> 🚀 Why is React used? </h2>
+<h2 id="Why_is_React_used" style="color:green; text-align:center;"> 🚀 Why is React used? </h2>
 
 
 - **Fast performance** – Uses **Virtual DOM** to update only changed parts
@@ -322,9 +307,9 @@
 **React is used to build fast, scalable, and interactive user interfaces easily.**
 
 
-<span style="color:green;">================================================================ </span>
+<hr style="border: 2px solid green;">
 
-<h2 id="main_features_of_React" style="color:green"> ✨ Main features of React? </h2>
+<h2 id="main_features_of_React" style="color:green; text-align:center;"> ✨ Main features of React? </h2>
 
 
 * **Component-Based** – UI is built using small, reusable components
@@ -341,9 +326,9 @@
 **React helps build fast, reusable, and easy-to-manage user interfaces.**
 
 
-<span style="color:green;">================================================================ </span>
+<hr style="border: 2px solid green;">
 
-<h2 id="What_is_JSX" style="color:green"> What is JSX? </h2>
+<h2 id="What_is_JSX" style="color:green; text-align:center;"> What is JSX? </h2>
 
 
 ![Image](./Reference/Imgs/jsx.png)
@@ -365,9 +350,9 @@ HTML + JavaScript together in one place
 **JSX lets you write UI code in a simple and readable way inside JavaScript.**
 
 
-<span style="color:green;">================================================================ </span>
+<hr style="border: 2px solid green;">
 
-<h2 id="JSX_faster_than_normal" style="color:green"> ⚡ Why is JSX faster than normal JavaScript? </h2>
+<h2 id="JSX_faster_than_normal" style="color:green; text-align:center;"> ⚡ Why is JSX faster than normal JavaScript? </h2>
 
 
 ✅ **JSX is not actually faster by itself**
@@ -388,9 +373,9 @@ HTML + JavaScript together in one place
 **JSX feels faster because React optimizes UI updates, not because JSX is faster than JavaScript.**
 
 
-<span style="color:green;">================================================================ </span>
+<hr style="border: 2px solid green;">
 
-<h2 id="What_is_Virtual_DOM" style="color:green"> 🧠 What is Virtual DOM? </h2>
+<h2 id="What_is_Virtual_DOM" style="color:green; text-align:center;"> 🧠 What is Virtual DOM? </h2>
 
 ![Image](./Reference/Imgs/virtual_dom.png)
 
@@ -411,15 +396,15 @@ HTML + JavaScript together in one place
 
 
 
-<span style="color:green;">================================================================ </span>
+<hr style="border: 2px solid green;">
 
-<h2 id="Virtual_DOM_and_Real_DOM" style="color:green"> 🆚 Difference between Virtual DOM and Real DOM </h2>
+<h2 id="Virtual_DOM_and_Real_DOM" style="color:green; text-align:center;"> 🆚 Difference between Virtual DOM and Real DOM </h2>
 
 
 | * Virtual DOM                  | 🔸 Real DOM                    |
-| ------------------------------- | ------------------------------ |
+| ------------------------------ | ----------------------------- |
 | 🧠 Lightweight copy of Real DOM | 🌐 Actual browser DOM          |
-| ⚡ Faster updates                | 🐌 Slower updates              |
+| ⚡ Faster updates               | 🐌 Slower updates              |
 | 🔄 Updates only changed parts   | 🔁 Re-renders full DOM nodes   |
 | 💻 Stored in memory             | 🌍 Directly affects browser UI |
 | 🚀 Used by React                | 🧩 Used by normal JavaScript   |
@@ -432,9 +417,9 @@ HTML + JavaScript together in one place
 
 
 
-<span style="color:green;">================================================================ </span>
+<hr style="border: 2px solid green;">
 
-<h2 id="How_React_works_internally" style="color:green"> ⚙️ How React works internally? </h2>
+<h2 id="How_React_works_internally" style="color:green; text-align:center;"> ⚙️ How React works internally? </h2>
 
 ![Image](./Reference/Imgs/how_to_work_react.png)
 
@@ -455,16 +440,62 @@ HTML + JavaScript together in one place
 **React updates only what changes instead of reloading the whole page.**
 
 
-<span style="color:green;">================================================================ </span>
+<hr style="border: 2px solid green;">
+
+<h2 id="What_is_Reconciliation" style="color:green; text-align:center;"> What is Reconciliation,why Reconciliation is needed? </h2>
+
+**Reconciliation** is the process React uses to **update the UI efficiently** when the **state or props change**.
+
+🧠 In simple words:
+
+> React compares the **old Virtual DOM** with the **new Virtual DOM** and updates **only the changed parts** in the real DOM.
+
+---
+
+### 🔍 Why is Reconciliation needed?
+
+⚡ **Performance**
+
+* Updating the whole DOM is slow
+* Reconciliation updates **only what changed**
+
+🪄 **Efficiency**
+
+* React uses a **diffing algorithm** to find differences
+* Less DOM manipulation = faster app
+
+🧱 **Better User Experience**
+
+* Faster rendering
+* Smooth UI updates
+
+---
+
+### 🧩 How it works (Easy Steps)
+
+1️⃣ State or props change
+2️⃣ New **Virtual DOM** is created
+3️⃣ React compares it with the old one 🔍
+4️⃣ Only changed elements are updated in the real DOM 🎯
+
+---
+
+### 🗣 Interview One-Line Answer (Very Important ⭐)
+
+> **Reconciliation is the process by which React updates the DOM by comparing the old and new Virtual DOM and applying only the necessary changes for better performance.**
+
+
+
+<hr style="border: 2px solid green;">
 
 
 <h1 style="text-align:center;" > Components </h1>
 
 ![image](./Reference/Imgs/component.png)
 
-<span style="color:green;">================================================================ </span>
+<hr style="border: 2px solid green;">
 
-<h2 id="What_is_a_Component_in_React" style="color:green"> 🧩 What is a Component in React? </h2>
+<h2 id="What_is_a_Component_in_React" style="color:green; text-align:center;"> 🧩 What is a Component in React? </h2>
 
 📦 A **component** is a **small, reusable piece of UI** in React.
 
@@ -484,21 +515,21 @@ One website = many small components
 **A component is a reusable building block of the React UI.**
 
 
-<span style="color:green;">================================================================ </span>
+<hr style="border: 2px solid green;">
 
-<h2 id="Functional_and_Class_components" style="color:green"> 🆚 Difference between Functional and Class Components
+<h2 id="Functional_and_Class_components" style="color:green; text-align:center;"> 🆚 Difference between Functional and Class Components
  </h2>
 
 ![image](./Reference/Imgs/diff_function_class_component.png)
 
 
-| * Functional Component                  | 🔸 Class Component            |
-| ---------------------------------------  | ----------------------------- |
-| 🧩 Simple JavaScript function            | 🏗️ JavaScript class           |
-| ⚛️ Uses **Hooks** (useState, useEffect)  | 🔁 Uses **lifecycle methods** |
-| ✍️ Less code, easy to read               | 📄 More code, complex         |
-| 🚀 Better performance                    | 🐌 Slightly slower            |
-| ✅ Most used in modern React             | ❌ Less used now              |
+| * Functional Component                 | 🔸 Class Component            |
+| -------------------------------------- | ---------------------------- |
+| 🧩 Simple JavaScript function           | 🏗️ JavaScript class           |
+| ⚛️ Uses **Hooks** (useState, useEffect) | 🔁 Uses **lifecycle methods** |
+| ✍️ Less code, easy to read              | 📄 More code, complex         |
+| 🚀 Better performance                   | 🐌 Slightly slower            |
+| ✅ Most used in modern React            | ❌ Less used now              |
 
 ---
 
@@ -508,9 +539,9 @@ One website = many small components
 
 
 
-<span style="color:green;">================================================================ </span>
+<hr style="border: 2px solid green;">
 
-<h2 id="Component_Composition" style="color:green"> What is Component Composition? </h2>
+<h2 id="Component_Composition" style="color:green; text-align:center;"> What is Component Composition? </h2>
 
 ![image](./Reference/Imgs/component_composition.png)
 
@@ -559,16 +590,196 @@ function Page() {
 
 **Using components inside another component is called component composition.**
 
+<hr style="border: 2px solid green;">
+<h2 id="Functional_Components" style="color:green; text-align:center;"> ⭐ Why Functional Components are Preferred Now? ⚛️ </h2>
 
-<span style="color:green;">================================================================ </span>
+
+Functional components are preferred because they are **simpler, faster, and easier to manage** using **React Hooks**.
+
+- **Less Code & More Readable** – No classes, constructors, or `this` keyword
+- **Hooks Support 🪝** – Use `useState`, `useEffect`, etc. for state and lifecycle
+- **Better Performance ⚡** – Easier for React to optimize
+- **Reusable Logic ♻️** – Custom Hooks make logic sharing simple
+
+---
+
+### **💻 Code Sample**
+
+```jsx
+import React, { useState } from "react";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <button onClick={() => setCount(count + 1)}>
+      Count: {count}
+    </button>
+  );
+}
+
+export default Counter;
+```
+
+---
+
+### **🎯 Interview One-Line Answer**
+
+> **Functional components are preferred because they are simpler, use hooks for state and lifecycle management, and provide better performance and code readability.**
+<hr style="border: 2px solid green;">
+
+<h2 id="What_is_component_reusability" style="color:green; text-align:center;"> 🔁 What is Component Reusability in React? ♻️</h2>
+
+
+**Component Reusability** means **creating a component once and using it multiple times** with different data (props).
+
+- **Saves Development Time ⏱️**
+- **Reduces Code Duplication 🧹**
+- **Easy to Maintain & Update 🔧**
+- **Makes UI Consistent 🎨**
+
+---
+
+### **💻 Code Sample**
+
+```jsx
+function Button({ text }) {
+  return <button>{text}</button>;
+}
+
+// Reusing the same component
+<Button text="Login" />
+<Button text="Register" />
+```
+
+---
+
+### **🎯 Interview One-Line Answer**
+
+> **Component reusability allows the same React component to be used multiple times with different props, reducing duplication and improving maintainability.**
+
+<hr style="border: 2px solid green;">
+
+<h2 id="What_is_a_pure_component" style="color:green; text-align:center;"> ✨ What is a Pure Component? ⚛️</h2>
+
+A **Pure Component** is a React component that **re-renders only when its props or state change**.
+
+🔹 Uses **shallow comparison 🧠** of props and state
+🔹 Prevents **unnecessary re-renders 🚫**
+🔹 Improves **performance ⚡**
+
+---
+
+### **💻 Code Sample (Class-based Pure Component)**
+
+```jsx
+import React, { PureComponent } from "react";
+
+class MyComponent extends PureComponent {
+  render() {
+    return <h1>Hello React</h1>;
+  }
+}
+
+export default MyComponent;
+```
+
+---
+
+### **🪝 Functional Alternative (Using React.memo)**
+
+```jsx
+const MyComponent = React.memo(() => {
+  return <h1>Hello React</h1>;
+});
+```
+
+---
+
+### **🎯 Interview One-Line Answer**
+
+> **A Pure Component automatically performs a shallow comparison of props and state to avoid unnecessary re-rendering and improve performance.**
+
+<hr style="border: 2px solid green;">
+
+<h2 id="What_is_Shallow_Comparison" style="color:green; text-align:center;"> 🔍 What is Shallow Comparison? 🧠</h2>
+
+**Shallow comparison** checks **only the first level of values** in objects or arrays, **not nested data**.
+
+- Compares **primitive values directly** (`number`, `string`, `boolean`)
+- For objects & arrays, compares **reference (memory address)**
+- Faster but **does not detect deep changes ⚠️**
+
+---
+
+### **💻 Example**
+
+```js
+const obj1 = { name: "React" };
+const obj2 = { name: "React" };
+
+console.log(obj1 === obj2); // false (different reference)
+```
+
+```js
+const obj3 = obj1;
+console.log(obj1 === obj3); // true (same reference)
+```
+
+---
+
+### **⚛️ In React Context**
+
+- Used by **PureComponent** and **React.memo**
+- If reference doesn’t change → **no re-render 🚫**
+- If reference changes → **re-render happens 🔄**
+
+---
+
+### **🎯 Interview One-Line Answer**
+
+> **Shallow comparison compares only top-level values and checks object or array references instead of deeply comparing nested data.**
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="What_is_a_Memoized_Component" style="color:green; text-align:center;"> 🧠 What is a Memoized Component? ⚛️ </h2>
+
+
+A **Memoized Component** is a React component that **re-renders only when its props change**, using **memoization**.
+
+-  Created using **`React.memo()` 🪝**
+-  Prevents **unnecessary re-renders 🚫**
+-  Uses **shallow comparison 🔍** of props
+-  Improves **performance ⚡**
+
+---
+
+### **💻 Code Sample**
+
+```jsx
+const UserName = React.memo(({ name }) => {
+  return <h2>{name}</h2>;
+});
+
+export default UserName;
+```
+
+---
+
+### **🎯 Interview One-Line Answer**
+
+> **A memoized component uses `React.memo` to remember the previous output and re-render only when its props change.**
+
+<hr style="border: 2px solid green;">
 
 <h1 style="text-align:center;" > Props </h1>
 
 ![img](./Reference/Imgs/Props_usage.png)
 
-<span style="color:green;">================================================================ </span>
+<hr style="border: 2px solid green;">
 
-<h2 id="Props_in_React" style="color:green"> What are Props in React? </h2>
+<h2 id="Props_in_React" style="color:green; text-align:center;"> What are Props in React? </h2>
 
 📦 **Props (Properties)** are used to **pass data from one component to another**.
 
@@ -606,9 +817,9 @@ function App() {
 **Props are used to pass data from parent component to child component.**
 
 
-<span style="color:green;">================================================================ </span>
+<hr style="border: 2px solid green;">
 
-<h2 id="Are_Props_Mutable_or_Immutable" style="color:green"> 🧩 Are Props Mutable or Immutable?
+<h2 id="Are_Props_Mutable_or_Immutable" style="color:green; text-align:center;"> 🧩 Are Props Mutable or Immutable?
  </h2>
 
 ❌ **Props are immutable** (cannot be changed by the child component)
@@ -640,21 +851,21 @@ function Parent() {
 **Props cannot be modified by the component that receives them.**
 
 
-<span style="color:green;">================================================================ </span>
+<hr style="border: 2px solid green;">
 
-<h2 id="Difference_between_props_and_state" style="color:green"> Difference between props and state </h2>
+<h2 id="Difference_between_props_and_state" style="color:green; text-align:center;"> Difference between props and state </h2>
 
 ![img](./Reference/Imgs/state_props.png)
 
 🆚 **Difference between Props and State**
 
-| * Props                                       | 🔸 State                             |
-| ---------------------------------------------  | ------------------------------------ |
-| 📦 Used to pass data to components             | 🧠 Used to manage component data     |
-| ⬇️ Data comes from parent                      | 🔁 Data is managed inside component  |
-| ❌ Immutable (read-only)                       | ✅ Mutable (can be changed)          |
-| ⚛️ Used in both functional & class components  | ⚛️ Mostly used inside components     |
-| 🔄 Changes come from parent                    | 🔄 Changes using setState / useState |
+| * Props                                      | 🔸 State                             |
+| -------------------------------------------- | ----------------------------------- |
+| 📦 Used to pass data to components            | 🧠 Used to manage component data     |
+| ⬇️ Data comes from parent                     | 🔁 Data is managed inside component  |
+| ❌ Immutable (read-only)                      | ✅ Mutable (can be changed)          |
+| ⚛️ Used in both functional & class components | ⚛️ Mostly used inside components     |
+| 🔄 Changes come from parent                   | 🔄 Changes using setState / useState |
 
 ---
 
@@ -663,9 +874,9 @@ function Parent() {
 **Props are used to pass data, while state is used to manage data inside a component.**
 
 
-<span style="color:green;">================================================================ </span>
+<hr style="border: 2px solid green;">
 
-<h2 id="pass_data_from_parent_to_child" style="color:green"> How to pass data from parent to child? </h2>
+<h2 id="pass_data_from_parent_to_child" style="color:green; text-align:center;"> How to pass data from parent to child? </h2>
 
 🧩 **How to Pass Data from Parent to Child?**
 
@@ -694,9 +905,9 @@ function Child(props) {
 **Data is passed from parent to child using props.**
 
 
-<span style="color:green;">================================================================ </span>
+<hr style="border: 2px solid green;">
 
-<h2 id="pass_data_from_child_to_parent" style="color:green"> 🧩 How to Pass Data from Child to Parent? </h2>
+<h2 id="pass_data_from_child_to_parent" style="color:green; text-align:center;"> 🧩 How to Pass Data from Child to Parent? </h2>
 
 👉 By using a **function passed as a prop**
 
@@ -731,9 +942,9 @@ function Parent() {
 **Data is passed from child to parent using callback functions via props.**
 
 
-<span style="color:green;">================================================================ </span>
+<hr style="border: 2px solid green;">
 
-<h2 id="What_is_prop_drilling" style="color:green"> 🧩 What is Prop Drilling? and How to Avoid Prop Drilling? </h2>
+<h2 id="What_is_prop_drilling" style="color:green; text-align:center;"> 🧩 What is Prop Drilling? and How to Avoid Prop Drilling? </h2>
 
 ![img](./Reference/Imgs/props_drilling.png)
 
@@ -798,9 +1009,9 @@ function GrandChild() {
 
 <h1 style="text-align:center;" > State </h1>
 
-<span style="color:green;">================================================================ </span>
+<hr style="border: 2px solid green;">
 
-<h2 id="What_is_State_in_React" style="color:green"> 🧩 What is State in React?</h2>
+<h2 id="What_is_State_in_React" style="color:green; text-align:center;"> 🧩 What is State in React?</h2>
 
 ![img](./Reference/Imgs/state_Libraries.png)
 
@@ -843,9 +1054,9 @@ function Counter() {
 
 
 
-<span style="color:green;">================================================================ </span>
+<hr style="border: 2px solid green;">
 
-<h2 id="Why_State_is_Needed_in_React" style="color:green"> 🧠 Why State is Needed in React?</h2>
+<h2 id="Why_State_is_Needed_in_React" style="color:green; text-align:center;"> 🧠 Why State is Needed in React?</h2>
 
 
 - To **store dynamic data**
@@ -863,9 +1074,9 @@ Counter value, form input, toggle button
 **State is needed to manage changing data and keep the UI in sync with user actions.**
 
 
-<span style="color:green;">================================================================ </span>
+<hr style="border: 2px solid green;">
 
-<h2 id="Update_State_Correctly" style="color:green"> 🧩 How to Update State Correctly in React? </h2>
+<h2 id="Update_State_Correctly" style="color:green; text-align:center;"> 🧩 How to Update State Correctly in React? </h2>
 
 
 👉 Always use the **state update function** (`setState` / `setCount`)
@@ -909,9 +1120,9 @@ setCount(prevCount => prevCount + 1);
 **State should be updated using the provided setter function, not directly.**
 
 
-<span style="color:green;">================================================================ </span>
+<hr style="border: 2px solid green;">
 
-<h2 id="state_updates_are_asynchronous" style="color:green">🧠 Why state updates are asynchronous? </h2>
+<h2 id="state_updates_are_asynchronous" style="color:green; text-align:center;">🧠 Why state updates are asynchronous? </h2>
 
 
 * React **does not update state immediately**
@@ -978,9 +1189,9 @@ const handleClick = () => {
 
 
 
-<span style="color:green;">================================================================ </span>
+<hr style="border: 2px solid green;">
 
-<h2 id="Manage_Multiple_States_in_React" style="color:green"> 🧠 How to Manage Multiple States in React? </h2>
+<h2 id="Manage_Multiple_States_in_React" style="color:green; text-align:center;"> 🧠 How to Manage Multiple States in React? </h2>
 
 ### ✅ Method 1: Use Multiple `useState` Hooks
 
@@ -1026,15 +1237,15 @@ const [state, dispatch] = useReducer(reducer, initialState);
 
 **Multiple states can be managed using multiple useState hooks, a single state object, or useReducer for complex cases.**
 
-<span style="color:green;">================================================================ </span>
+<hr style="border: 2px solid green;">
 
 <h1 style="text-align:center;" > Events </h1>
 
-<span style="color:green;">================================================================ </span>
+<hr style="border: 2px solid green;">
 
 ![img](./Reference/Imgs/event_handling.png)
 
-<h2 id="Event_Handling_Works" style="color:green"> How Event Handling Works in React? </h2>
+<h2 id="Event_Handling_Works" style="color:green; text-align:center;"> How Event Handling Works in React? </h2>
 
 
 
@@ -1070,18 +1281,18 @@ function Button() {
 **Event handling in React is done by passing functions to event handlers like onClick, onChange, etc.**
 
 
-<span style="color:green;">================================================================ </span>
+<hr style="border: 2px solid green;">
 
-<h2 id="between_React_Events_and_DOM_Events" style="color:green"> 🆚 Difference between React Events and DOM Events </h2>
+<h2 id="between_React_Events_and_DOM_Events" style="color:green; text-align:center;"> 🆚 Difference between React Events and DOM Events </h2>
 
 
-| * React Events                          | 🔸 DOM Events                           |
-| ---------------------------------------- | --------------------------------------- |
-| ⚛️ Uses **Synthetic Events**             | 🌐 Uses **Native browser events**       |
-| 🧩 Works same across all browsers        | 🌍 Browser-dependent behavior           |
-| 🖊️ Written in **camelCase** (`onClick`)  | ✍️ Written in **lowercase** (`onclick`) |
-| 📌 Passed as function                    | 📎 Uses event listeners                 |
-| 🚀 Better performance (event pooling)    | 🐌 No optimization                      |
+| * React Events                         | 🔸 DOM Events                           |
+| -------------------------------------- | -------------------------------------- |
+| ⚛️ Uses **Synthetic Events**            | 🌐 Uses **Native browser events**       |
+| 🧩 Works same across all browsers       | 🌍 Browser-dependent behavior           |
+| 🖊️ Written in **camelCase** (`onClick`) | ✍️ Written in **lowercase** (`onclick`) |
+| 📌 Passed as function                   | 📎 Uses event listeners                 |
+| 🚀 Better performance (event pooling)   | 🐌 No optimization                      |
 
 ---
 
@@ -1091,9 +1302,9 @@ function Button() {
 
 
 
-<span style="color:green;">================================================================ </span>
+<hr style="border: 2px solid green;">
 
-<h2 id="What_is_a_Synthetic_Event" style="color:green"> 🧩 What is a Synthetic Event? </h2>
+<h2 id="What_is_a_Synthetic_Event" style="color:green; text-align:center;"> 🧩 What is a Synthetic Event? </h2>
 
 ![img](./Reference/Imgs/synthetic_event.png)
 
@@ -1130,9 +1341,9 @@ function InputBox() {
 
 
 
-<span style="color:green;">================================================================ </span>
+<hr style="border: 2px solid green;">
 
-<h2 id="pass_arguments_to_event_handlers" style="color:green"> How to Pass Arguments to Event Handlers in React? </h2>
+<h2 id="pass_arguments_to_event_handlers" style="color:green; text-align:center;"> How to Pass Arguments to Event Handlers in React? </h2>
 
 ```jsx
 // Event handler example
@@ -1164,9 +1375,9 @@ function Button() {
 **Arguments are passed to event handlers using arrow functions inside JSX.**
 
 
-<span style="color:green;">================================================================ </span>
+<hr style="border: 2px solid green;">
 
-<h2 id="Prevent_Default_Behavior_in_React" style="color:green"> 🧩 How to Prevent Default Behavior in React? </h2>
+<h2 id="Prevent_Default_Behavior_in_React" style="color:green; text-align:center;"> 🧩 How to Prevent Default Behavior in React? </h2>
 
 👉 Use **`event.preventDefault()`**
 
@@ -1200,15 +1411,15 @@ function Form() {
 **Default browser behavior in React is prevented using `event.preventDefault()`.**
 
 
-<span style="color:green;">================================================================ </span>
+<hr style="border: 2px solid green;">
 
 
 <h1 style="text-align:center;" > Conditional Rendering </h1>
 
 
-<span style="color:green;">================================================================ </span>
+<hr style="border: 2px solid green;">
 
-<h2 id="Conditional_Rendering" style="color:green"> 🧩 What is Conditional Rendering in React? </h2>
+<h2 id="Conditional_Rendering" style="color:green; text-align:center;"> 🧩 What is Conditional Rendering in React? </h2>
 
 ![img](./Reference/Imgs/conditional_rendering.png)
 
@@ -1243,13 +1454,13 @@ function LoginStatus({ isLoggedIn }) {
 **Conditional rendering is used to display different UI based on conditions.**
 
 
-<span style="color:green;">================================================================ </span>
+<hr style="border: 2px solid green;">
 
 <h1 style="text-align:center;" > Conditional Rendering </h1>
 
-<span style="color:green;">================================================================ </span>
+<hr style="border: 2px solid green;">
 
-<h2 id="Render_Lists_in_React" style="color:green"> 🧩 How to Render Lists in React?</h2>
+<h2 id="Render_Lists_in_React" style="color:green; text-align:center;"> 🧩 How to Render Lists in React?</h2>
 
 
 👉 Use **`map()`** function to loop over data and display UI.
@@ -1284,9 +1495,9 @@ function List() {
 **Lists in React are rendered using the map() function.**
 
 
-<span style="color:green;">================================================================ </span>
+<hr style="border: 2px solid green;">
 
-<h2 id="index_is_not_a_key" style="color:green"> Why index as key is not recommended? </h2>
+<h2 id="index_is_not_a_key" style="color:green; text-align:center;"> Why index as key is not recommended? </h2>
 
 
 Got it 👍 You want a **clear example showing item values** so it’s easy to understand.
@@ -1368,15 +1579,15 @@ function List() {
 **Index as key is not recommended because changing list order changes indexes, causing incorrect UI rendering.**
 
 
-<span style="color:green;">================================================================ </span>
+<hr style="border: 2px solid green;">
 
 
 <h1 style="text-align:center;" > Hooks (Core) </h1>
 
 
-<span style="color:green;">================================================================ </span>
+<hr style="border: 2px solid green;">
 
-<h2 id="Hooks_in_React" style="color:green"> 🧩 What Are Hooks in React? </h2>
+<h2 id="Hooks_in_React" style="color:green; text-align:center;"> 🧩 What Are Hooks in React? </h2>
 
 ![img](./Reference/Imgs/hook_in_react.png)
 
@@ -1513,9 +1724,9 @@ function Child() {
 **`useContext` is used to access shared data from Context without prop drilling.**
 
 
-<span style="color:green;">================================================================ </span>
+<hr style="border: 2px solid green;">
 
-<h2 id="Why_hooks_were_introduced" style="color:green"> 🧠 Why Hooks Were Introduced in React?</h2>
+<h2 id="Why_hooks_were_introduced" style="color:green; text-align:center;"> 🧠 Why Hooks Were Introduced in React?</h2>
 
 Hooks were introduced to **solve problems with class components** and make React **simpler and cleaner**.
 
@@ -1580,9 +1791,9 @@ function Counter() {
 **Hooks were introduced to use state and lifecycle features in functional components and simplify React code.**
 
 
-<span style="color:green;">================================================================ </span>
+<hr style="border: 2px solid green;">
 
-<h2 id="Rules_of_Hooks" style="color:green"> 🧠 Rules of Hooks (With Right & Wrong Examples) </h2>
+<h2 id="Rules_of_Hooks" style="color:green; text-align:center;"> 🧠 Rules of Hooks (With Right & Wrong Examples) </h2>
 
 
 👉 React has **2 main rules of Hooks**
@@ -1672,87 +1883,6 @@ function useCounter() {
 
 
 
-<span style="color:green;">================================================================ </span>
-
-<h2 id="What_is_useState" style="color:green"> 🧩 What is `useState` in React? </h2>
-
-
-🪝 **`useState`** is a **Hook** used to **add and manage state** in functional components.
-
-* It stores data that can change
-* When state changes, UI **re-renders automatically**
-
----
-
-### ✅ Proper Example
-
-```jsx
-import { useState } from "react";
-
-function Counter() {
-  // useState hook
-  const [count, setCount] = useState(0);
-
-  return (
-    <button onClick={() => setCount(count + 1)}>
-      Count: {count}
-    </button>
-  );
-}
-```
-
-* `count` → state value
-* `setCount` → function to update state
-* `0` → initial value
-
----
-
----
-
-📌 **Query-style answer:**
-
-**`useState` is a React Hook that allows functional components to store and update state.**
-
-
-
-
-
-<span style="color:green;">================================================================ </span>
-
-<h2 id=" What_is_useEffect" style="color:green"> 🧩 What is `useEffect` in React? </h2>
-
-
-🪝 **`useEffect`** is a **Hook** used to perform **side effects** in functional components.
-
-* Runs after the component renders
-* Used for API calls, timers, subscriptions, DOM updates
-
----
-
-### ✅ Proper Example
-
-```jsx
-import { useEffect } from "react";
-
-function Page() {
-
-  useEffect(() => {
-    console.log("Component mounted");
-  }, []); // runs once
-
-  return <h1>Hello React</h1>;
-}
-```
-
-* Effect runs when component loads
-* `[]` controls when effect runs
-
----
-
----
-
-📌 **Query-style answer:**
-
-**`useEffect` is used to handle side effects in functional components.**
+<hr style="border: 2px solid green;">
 
 
