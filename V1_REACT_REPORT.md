@@ -1,87 +1,56 @@
 ## 1. React Basics
 
-
 * [What is React?](#What_is_React)
-
 * [Why is React used?](#Why_is_React_used)
-
 * [What are the main features of React?](#main_features_of_React)
-
 * [What is JSX?](#What_is_JSX)
-
 * [Why JSX is faster than normal JavaScript?](#JSX_faster_than_normal)
-
 * [What is Virtual DOM?](#What_is_Virtual_DOM)
-
 * [Difference between Virtual DOM and Real DOM](#Virtual_DOM_and_Real_DOM)
-
 * [How React works internally?](#How_React_works_internally)
-
-* What is `create-react-app`?
+* What is Reconciliation,why Reconciliation is needed?
 
 ---
 
 ## 2. Components
 
-
 * [What is a component in React?](#What_is_a_Component_in_React)
-
 * [Difference between Functional and Class components](#Functional_and_Class_components)
-
 * [What is component composition?](#Component_Composition)
-
 * Why Functional components are preferred now?
-
 * What is component reusability?
-
 * What is a pure component?
-
 * What is memoized component?
 
 ---
 
 ## 3. Props
 
-
 * [What are props?](#Props_in_React)
-
 * [Are props mutable or immutable?](#Are_Props_Mutable_or_Immutable)
-
 * [Difference between props and state](#Difference_between_props_and_state)
-
 * [How to pass data from parent to child?](#pass_data_from_parent_to_child)
-
 * [How to pass data from child to parent?](#pass_data_from_child_to_parent)
-
 * [What is prop drilling. How to avoid prop drilling?](#What_is_prop_drilling)
 
 ---
 
 ## 4. State
-
 * [What is state in React?](#What_is_State_in_React)
-
 * [Why state is needed?](#Why_State_is_Needed_in_React)
-
 * [How to update state correctly?](#Update_State_Correctly)
-
 * [Why state updates are asynchronous?](#state_updates_are_asynchronous)
-
 * [How to manage multiple states?](#Manage_Multiple_States_in_React)
 
 ---
 
 ## 5. Events
 
-
+* What is Event Handling?
 * [How event handling works in React?](#Event_Handling_Works)
-
 * [Difference between React events and DOM events](#between_React_Events_and_DOM_Events)
-
 * [What is synthetic event?](#What_is_a_Synthetic_Event)
-
 * [How to pass arguments to event handlers?](#pass_arguments_to_event_handlers)
-
 * [How to prevent default behavior in React?](#Prevent_Default_Behavior_in_React)
 
 ---
@@ -89,52 +58,226 @@
 
 ## 6. Conditional Rendering
 
-
 * [What is conditional rendering?](#Conditional_Rendering)
-
 * Different ways to do conditional rendering
-
 * When to use ternary operator in JSX?
-
 * When to use logical AND (`&&`)?
-
 * How to render components conditionally?
 
 ---
 
 ## 7. Lists & Keys
 
-
 * [How to render lists in React?](#Render_Lists_in_React)
-
 * Why keys are important?
-
 * What happens if keys are not used?
-
 * [Why index as key is not recommended?](#index_is_not_a_key)
-
 * How React uses keys internally?
 
 ---
 
-## 8. Hooks (Core)
+## 8. Hooks 
 
 
 * [What are hooks?](#Hooks_in_React)
-
 * [Why hooks were introduced?](#Why_hooks_were_introduced)
-
 * [Rules of hooks](#Rules_of_Hooks)
-
 * [What is `useState`?](What_is_useState)
-
 * [What is `useEffect`?](#What_is_useEffect)
 
+---
+
+## 9. Hooks
+
+* What are hooks?
+* Why hooks were introduced?
+* Rules of hooks
+
+### Basic Hooks
+
+* What is `useState`?
+* Why `useState` is used?
+* What is `useEffect`?
+* Why `useEffect` is used?
 * Difference between `useEffect` and lifecycle methods
-
 * Cleanup function in `useEffect`
-
 * Dependency array behavior
+
+### Context Hook
+
+* What is `useContext`?
+* What problem does `useContext` solve?
+
+### Ref Hook
+
+* What is `useRef`?
+* Why `useRef` is used?
+* Difference between `useRef` and `useState`
+
+### Memoization Hooks
+
+* What is `useMemo`?
+* Why `useMemo` is used?
+* What is `useCallback`?
+* Why `useCallback` is used?
+* Difference between `useMemo` and `useCallback`
+
+### Reducer Hook
+
+* What is `useReducer`?
+* Why `useReducer` is used?
+* Difference between `useReducer` and `useState`
+
+### Layout & DOM Hooks
+
+* What is `useLayoutEffect`?
+* Difference between `useEffect` and `useLayoutEffect`
+
+### Advanced Hooks
+
+* What is `useImperativeHandle`?
+* Why `useImperativeHandle` is used?
+* What is `useDebugValue`?
+* Why `useDebugValue` is used?
+
+### Concurrent Hooks
+
+* What is `useTransition`?
+* Why `useTransition` is used?
+* What is `useDeferredValue`?
+* Why `useDeferredValue` is used?
+
+### Utility Hook
+
+* What is `useId`?
+* Why `useId` is used?
+
+### Custom Hooks
+
+* What is custom hook?
+* Why custom hooks are created?
+* When to create custom hooks?
+
+
+---
+
+## 10. Lifecycle (Conceptual)
+
+* What are React lifecycle methods?
+* Mounting phase methods
+* Updating phase methods
+* Unmounting phase methods
+* Which lifecycle methods are deprecated?
+* How lifecycle works with hooks?
+
+---
+
+## 11. Forms
+
+* Controlled vs Uncontrolled components
+* How to handle form input in React?
+* How to handle multiple inputs?
+* How to validate forms?
+* How to handle checkbox and radio inputs?
+* What is form submission flow?
+
+---
+
+## 12. Styling in React
+
+* Different ways to style React components
+* Inline styling pros and cons
+* CSS Modules
+* Styled Components
+* How className works in JSX?
+* Conditional styling in React
+
+---
+
+## 13. Routing (React Router)
+
+* [What is React Router?](#What_is_React_Router)
+* [Difference between BrowserRouter and HashRouter](#BrowserRouter_and_HashRouter)
+* What is Route?
+* What is Link vs NavLink?
+* What is useParams?
+* What is useNavigate?
+* Protected routes concept
+* Lazy loading routes
+
+---
+
+## 14. Performance Optimization
+
+* How to optimize React performance?
+* What is React.memo?
+* What causes unnecessary re-renders?
+* How to prevent re-rendering?
+* What is code splitting?
+* What is lazy loading?
+
+---
+
+## 15. State Management
+
+* What is lifting state up?
+* What is Context API?
+* When to use Redux?
+* Redux vs Context API
+* What is global state?
+* What is local state?
+
+---
+
+## 16. Redux (Core)
+
+* What is Redux?
+* Core principles of Redux
+* What is store?
+* What is action?
+* What is reducer?
+* What is dispatch?
+* Redux flow diagram
+* What is middleware?
+
+---
+
+## 17. API & Data Handling
+
+* How to fetch data in React?
+* Axios vs Fetch
+* Where to call API in React?
+* How to handle loading state?
+* How to handle error state?
+* How to cancel API calls?
+
+---
+
+## 18. Security & Best Practices
+
+* How to prevent XSS in React?
+* Is React secure by default?
+* How to store tokens safely?
+* Why not store secrets in frontend?
+* Best practices for React apps
+
+---
+
+## 20. Build & Deployment
+
+* What happens during React build?
+* Development vs production build
+* How to deploy React app?
+* Environment variables in React
+* How `.env` works?
+
+
+## Rendering
+
+* What is Rendering?
+* Why Re-render happens?
+* What causes Re-render?
+* How to prevent unnecessary Re-render?
 
 ---
 
@@ -149,11 +292,14 @@
 
  **React** is a **JavaScript library** used to build **user interfaces**, mainly for **single-page applications**.
 
-👉 It helps you create **reusable UI components**
-👉 It updates the screen **fast** using a virtual DOM
-👉 It is maintained by **Meta (Facebook)**
+* It helps you create **reusable UI components**
+* It updates the screen **fast** using a virtual DOM
+* It is maintained by **Meta (Facebook)**
 
-📌 In simple words:
+---
+
+📌 **Query-style answer:**
+
 **React makes building interactive and dynamic websites easier and faster.**
 
 
@@ -163,13 +309,16 @@
 <h2 id="Why_is_React_used" style="color:green"> 🚀 Why is React used? </h2>
 
 
-✅ **Fast performance** – Uses **Virtual DOM** to update only changed parts
-✅ **Reusable components** – Write once, use anywhere
-✅ **Easy to manage UI** – UI updates automatically when data changes
-✅ **Large community** – Lots of support, libraries, and tools
-✅ **Used by big companies** – Facebook, Instagram, Netflix, etc.
+- **Fast performance** – Uses **Virtual DOM** to update only changed parts
+- **Reusable components** – Write once, use anywhere
+- **Easy to manage UI** – UI updates automatically when data changes
+- **Large community** – Lots of support, libraries, and tools
+- **Used by big companies** – Facebook, Instagram, Netflix, etc.
 
-📌 In simple words:
+---
+
+📌 **Query-style answer:**
+
 **React is used to build fast, scalable, and interactive user interfaces easily.**
 
 
@@ -178,14 +327,17 @@
 <h2 id="main_features_of_React" style="color:green"> ✨ Main features of React? </h2>
 
 
-🔹 **Component-Based** – UI is built using small, reusable components
-🔹 **Virtual DOM** – Improves performance by updating only necessary parts
-🔹 **JSX** – Write HTML-like code inside JavaScript
-🔹 **One-Way Data Binding** – Data flows in one direction, easy to debug
-🔹 **Fast Rendering** – Quick UI updates
-🔹 **Strong Community Support** – Backed by Meta and large ecosystem
+* **Component-Based** – UI is built using small, reusable components
+* **Virtual DOM** – Improves performance by updating only necessary parts
+* **JSX** – Write HTML-like code inside JavaScript
+* **One-Way Data Binding** – Data flows in one direction, easy to debug
+* **Fast Rendering** – Quick UI updates
+* **Strong Community Support** – Backed by Meta and large ecosystem
 
-📌 In simple words:
+---
+
+📌 **Query-style answer:**
+
 **React helps build fast, reusable, and easy-to-manage user interfaces.**
 
 
@@ -196,19 +348,20 @@
 
 ![Image](./Reference/Imgs/jsx.png)
 
-![Image](./Reference/Imgs/compiler-part.svg)
-
 
 🧠 **JSX (JavaScript XML)** is a **syntax extension** used in React that allows us to write **HTML-like code inside JavaScript**.
 
-✅ Makes code **easy to read and write**
-✅ Used to describe **UI structure**
-✅ Compiled into normal JavaScript by Babel
+  - Makes code **easy to read and write**
+  - Used to describe **UI structure**
+  - Compiled into normal JavaScript by Babel
 
 📌 Example idea:
 HTML + JavaScript together in one place
 
-📌 In simple words:
+---
+
+📌 **Query-style answer:**
+
 **JSX lets you write UI code in a simple and readable way inside JavaScript.**
 
 
@@ -218,16 +371,20 @@ HTML + JavaScript together in one place
 
 
 ✅ **JSX is not actually faster by itself**
+
 👉 JSX is converted into **JavaScript** by Babel
 
 🚀 **Real reason for speed in React:**
-🔹 **Virtual DOM** – Updates only changed elements
-🔹 **Efficient diffing algorithm** – Finds minimum changes
-🔹 **Optimized rendering** – Reduces direct DOM manipulation
+* **Virtual DOM** – Updates only changed elements
+* **Efficient diffing algorithm** – Finds minimum changes
+* **Optimized rendering** – Reduces direct DOM manipulation
 
 📌 JSX helps React **understand UI structure clearly**, which makes updates **more efficient**.
 
-📌 In simple words:
+---
+
+📌 **Query-style answer:**
+
 **JSX feels faster because React optimizes UI updates, not because JSX is faster than JavaScript.**
 
 
@@ -239,14 +396,17 @@ HTML + JavaScript together in one place
 
 🌳 **Virtual DOM** is a **lightweight copy of the real DOM** used by React.
 
-🔹 React first updates the **Virtual DOM**
-🔹 It compares old and new Virtual DOM (**diffing**)
-🔹 Finds only the **changed parts**
-🔹 Updates **only those parts** in the real DOM
+* React first updates the **Virtual DOM**
+* It compares old and new Virtual DOM (**diffing**)
+* Finds only the **changed parts**
+* Updates **only those parts** in the real DOM
 
 🚀 This makes React **fast and efficient**.
 
-📌 In simple words:
+---
+
+📌 **Query-style answer:**
+
 **Virtual DOM helps React update the UI quickly by changing only what is needed.**
 
 
@@ -256,7 +416,7 @@ HTML + JavaScript together in one place
 <h2 id="Virtual_DOM_and_Real_DOM" style="color:green"> 🆚 Difference between Virtual DOM and Real DOM </h2>
 
 
-| 🔹 Virtual DOM                  | 🔸 Real DOM                    |
+| * Virtual DOM                  | 🔸 Real DOM                    |
 | ------------------------------- | ------------------------------ |
 | 🧠 Lightweight copy of Real DOM | 🌐 Actual browser DOM          |
 | ⚡ Faster updates                | 🐌 Slower updates              |
@@ -264,7 +424,10 @@ HTML + JavaScript together in one place
 | 💻 Stored in memory             | 🌍 Directly affects browser UI |
 | 🚀 Used by React                | 🧩 Used by normal JavaScript   |
 
-📌 In simple words:
+---
+
+📌 **Query-style answer:**
+
 **Virtual DOM is faster because it updates only required changes, while Real DOM updates everything.**
 
 
@@ -276,16 +439,19 @@ HTML + JavaScript together in one place
 ![Image](./Reference/Imgs/how_to_work_react.png)
 
 
-🔹 **Component creation** – You write UI as components
-🔹 **JSX compilation** – JSX is converted into JavaScript
-🔹 **Virtual DOM creation** – React creates a Virtual DOM tree
-🔹 **State / props change** – Data changes trigger re-render
-🔹 **Diffing (Reconciliation)** – React compares old vs new Virtual DOM
-🔹 **Efficient update** – Only changed parts update in Real DOM
+* **Component creation** – You write UI as components
+* **JSX compilation** – JSX is converted into JavaScript
+* **Virtual DOM creation** – React creates a Virtual DOM tree
+* **State / props change** – Data changes trigger re-render
+* **Diffing (Reconciliation)** – React compares old vs new Virtual DOM
+* **Efficient update** – Only changed parts update in Real DOM
 
 🚀 This process makes React **fast and efficient**.
 
-📌 In simple words:
+---
+
+📌 **Query-style answer:**
+
 **React updates only what changes instead of reloading the whole page.**
 
 
@@ -302,16 +468,19 @@ HTML + JavaScript together in one place
 
 📦 A **component** is a **small, reusable piece of UI** in React.
 
-🔹 Components can be **buttons, forms, headers, pages**, etc.
+* Components can be **buttons, forms, headers, pages**, etc.
 
-🔹 Each component has its **own logic and UI**
+* Each component has its **own logic and UI**
 
-🔹 Components can be **reused** multiple times
+* Components can be **reused** multiple times
 
 📌 Example idea:
 One website = many small components
 
-📌 In simple words:
+---
+
+📌 **Query-style answer:**
+
 **A component is a reusable building block of the React UI.**
 
 
@@ -323,7 +492,7 @@ One website = many small components
 ![image](./Reference/Imgs/diff_function_class_component.png)
 
 
-| 🔹 Functional Component                  | 🔸 Class Component            |
+| * Functional Component                  | 🔸 Class Component            |
 | ---------------------------------------  | ----------------------------- |
 | 🧩 Simple JavaScript function            | 🏗️ JavaScript class           |
 | ⚛️ Uses **Hooks** (useState, useEffect)  | 🔁 Uses **lifecycle methods** |
@@ -331,7 +500,10 @@ One website = many small components
 | 🚀 Better performance                    | 🐌 Slightly slower            |
 | ✅ Most used in modern React             | ❌ Less used now              |
 
-📌 In simple words:
+---
+
+📌 **Query-style answer:**
+
 **Functional components are simpler and preferred over class components in modern React.**
 
 
@@ -344,14 +516,17 @@ One website = many small components
 
 🧱 **Component composition** means **building components by combining other components**.
 
-🔹 One component can **contain** other components
-🔹 Helps create **clean, reusable, and flexible UI**
-🔹 Avoids code duplication
+* One component can **contain** other components
+* Helps create **clean, reusable, and flexible UI**
+* Avoids code duplication
 
 📌 Example idea:
 Page = Header + Sidebar + Content + Footer
 
-📌 In simple words:
+---
+
+📌 **Query-style answer:**
+
 **Component composition is creating complex UI by joining small components together.**
 
 
@@ -375,10 +550,13 @@ function Page() {
 }
 ```
 
-🔹 **Header** and **Footer** are small components
-🔹 **Page** component **uses (composes)** them together
+* **Header** and **Footer** are small components
+* **Page** component **uses (composes)** them together
 
-📌 In simple words:
+---
+
+📌 **Query-style answer:**
+
 **Using components inside another component is called component composition.**
 
 
@@ -394,14 +572,17 @@ function Page() {
 
 📦 **Props (Properties)** are used to **pass data from one component to another**.
 
-🔹 Data flows **from parent to child**
-🔹 Props are **read-only** (cannot be changed by child)
-🔹 Used to make components **dynamic and reusable**
+* Data flows **from parent to child**
+* Props are **read-only** (cannot be changed by child)
+* Used to make components **dynamic and reusable**
 
 📌 Example idea:
 Same button, different text
 
-📌 In simple words:
+---
+
+📌 **Query-style answer:**
+
 **Props are inputs that allow components to receive data from their parent.**
 
 ```jsx
@@ -414,11 +595,14 @@ function App() {
 }
 ```
 
-🔹 `name` is a **prop**
-🔹 Data is passed from **App → Welcome**
-🔹 `Welcome` uses the value but **cannot change it**
+* `name` is a **prop**
+* Data is passed from **App → Welcome**
+* `Welcome` uses the value but **cannot change it**
+
+---
 
 📌 **Query-style answer:**
+
 **Props are used to pass data from parent component to child component.**
 
 
@@ -429,8 +613,8 @@ function App() {
 
 ❌ **Props are immutable** (cannot be changed by the child component)
 
-🔹 Props are **read-only**
-🔹 Only the **parent component** can change them
+* Props are **read-only**
+* Only the **parent component** can change them
 
 ### ✅ Example
 
@@ -449,7 +633,10 @@ function Parent() {
 
 📌 Even if you try to change `props.name`, React **does not allow it**.
 
-📌 In simple words:
+---
+
+📌 **Query-style answer:**
+
 **Props cannot be modified by the component that receives them.**
 
 
@@ -461,7 +648,7 @@ function Parent() {
 
 🆚 **Difference between Props and State**
 
-| 🔹 Props                                       | 🔸 State                             |
+| * Props                                       | 🔸 State                             |
 | ---------------------------------------------  | ------------------------------------ |
 | 📦 Used to pass data to components             | 🧠 Used to manage component data     |
 | ⬇️ Data comes from parent                      | 🔁 Data is managed inside component  |
@@ -469,7 +656,10 @@ function Parent() {
 | ⚛️ Used in both functional & class components  | ⚛️ Mostly used inside components     |
 | 🔄 Changes come from parent                    | 🔄 Changes using setState / useState |
 
+---
+
 📌 **Query-style answer:**
+
 **Props are used to pass data, while state is used to manage data inside a component.**
 
 
@@ -494,10 +684,13 @@ function Child(props) {
 
 ```
 
-🔹 `Parent` sends data using `name`
-🔹 `Child` receives data using `props.name`
+* `Parent` sends data using `name`
+* `Child` receives data using `props.name`
+
+---
 
 📌 **Query-style answer:**
+
 **Data is passed from parent to child using props.**
 
 
@@ -527,11 +720,14 @@ function Parent() {
 }
 ```
 
-🔹 Parent passes a **function** to Child
-🔹 Child **calls the function** with data
-🔹 Parent receives the data
+* Parent passes a **function** to Child
+* Child **calls the function** with data
+* Parent receives the data
+
+---
 
 📌 **Query-style answer:**
+
 **Data is passed from child to parent using callback functions via props.**
 
 
@@ -543,8 +739,8 @@ function Parent() {
 
 📦 **Prop drilling** means **passing props through multiple components** even when intermediate components don’t need them.
 
-🔹 Data goes: Parent → Child → Grandchild
-🔹 Makes code **hard to manage**
+* Data goes: Parent → Child → Grandchild
+* Makes code **hard to manage**
 
 ### ❌ Prop Drilling Example
 
@@ -593,7 +789,10 @@ function GrandChild() {
 }
 ```
 
+---
+
 📌 **Query-style answer:**
+
 **Prop drilling is passing data through many components. It can be avoided using Context API.**
 
 
@@ -608,11 +807,11 @@ function GrandChild() {
 🧠 **State** is used to **store and manage data inside a component**.
 
 
-🔹 State can **change over time**
+* State can **change over time**
 
-🔹 When state changes, **UI re-renders**
+* When state changes, **UI re-renders**
 
-🔹 State is **local to the component**
+* State is **local to the component**
 
 ---
 
@@ -632,11 +831,14 @@ function Counter() {
 }
 ```
 
-🔹 `count` is **state**
-🔹 `setCount` updates the state
-🔹 Button click updates UI
+* `count` is **state**
+* `setCount` updates the state
+* Button click updates UI
+
+---
 
 📌 **Query-style answer:**
+
 **State is a component’s own data that controls its behavior and UI.**
 
 
@@ -646,18 +848,18 @@ function Counter() {
 <h2 id="Why_State_is_Needed_in_React" style="color:green"> 🧠 Why State is Needed in React?</h2>
 
 
-✅ To **store dynamic data**
-
-✅ To **update UI automatically** when data changes
-
-✅ To **handle user interactions** (clicks, input, etc.)
-
-✅ To **control component behavior**
+- To **store dynamic data**
+- To **update UI automatically** when data changes
+- To **handle user interactions** (clicks, input, etc.)
+- To **control component behavior**
 
 📌 Example idea:
 Counter value, form input, toggle button
 
+---
+
 📌 **Query-style answer:**
+
 **State is needed to manage changing data and keep the UI in sync with user actions.**
 
 
@@ -677,7 +879,7 @@ Counter value, form input, toggle button
 count = count + 1;
 ```
 
-🔹 React will **not re-render** the UI
+* React will **not re-render** the UI
 
 ---
 
@@ -695,12 +897,15 @@ setCount(count + 1);
 setCount(prevCount => prevCount + 1);
 ```
 
-🔹 Ensures correct value
-🔹 Avoids bugs in multiple updates
+* Ensures correct value
+* Avoids bugs in multiple updates
+
+---
 
 ---
 
 📌 **Query-style answer:**
+
 **State should be updated using the provided setter function, not directly.**
 
 
@@ -709,11 +914,11 @@ setCount(prevCount => prevCount + 1);
 <h2 id="state_updates_are_asynchronous" style="color:green">🧠 Why state updates are asynchronous? </h2>
 
 
-🔹 React **does not update state immediately**
+* React **does not update state immediately**
 
-🔹 It **groups (batches) multiple state updates together**
+* It **groups (batches) multiple state updates together**
 
-🔹 This improves **performance** and avoids unnecessary re-renders
+* This improves **performance** and avoids unnecessary re-renders
 
 🚀 **What happens internally?**
 
@@ -742,8 +947,8 @@ function Counter() {
 }
 ```
 
-🔹 You clicked once
-🔹 You expect count = **2**
+* You clicked once
+* You expect count = **2**
 ❌ But result is **1**
 
 👉 **Why?**
@@ -760,12 +965,15 @@ const handleClick = () => {
 };
 ```
 
-🔹 React uses **latest previous state**
-🔹 Final count = **2** ✅
+* React uses **latest previous state**
+* Final count = **2** ✅
+
+---
 
 ---
 
 📌 **Query-style answer:**
+
 **State updates are asynchronous because React batches updates for better performance, so we must use the previous state when updating multiple times.**
 
 
@@ -781,8 +989,8 @@ const [name, setName] = useState("");
 const [age, setAge] = useState(0);
 ```
 
-🔹 Simple and clear
-🔹 Best for **unrelated data**
+* Simple and clear
+* Best for **unrelated data**
 
 ---
 
@@ -797,8 +1005,8 @@ const [user, setUser] = useState({
 setUser({ ...user, name: "React" });
 ```
 
-🔹 Good for **related data**
-🔹 Use spread operator to avoid mutation
+* Good for **related data**
+* Use spread operator to avoid mutation
 
 ---
 
@@ -808,11 +1016,14 @@ setUser({ ...user, name: "React" });
 const [state, dispatch] = useReducer(reducer, initialState);
 ```
 
-🔹 Best for **large or complex logic**
+* Best for **large or complex logic**
+
+---
 
 ---
 
 📌 **Query-style answer:**
+
 **Multiple states can be managed using multiple useState hooks, a single state object, or useReducer for complex cases.**
 
 <span style="color:green;">================================================================ </span>
@@ -827,11 +1038,11 @@ const [state, dispatch] = useReducer(reducer, initialState);
 
 
 
-🔹 React uses **synthetic events** (wrapper around browser events)
+* React uses **synthetic events** (wrapper around browser events)
 
-🔹 Events are written in **camelCase**
+* Events are written in **camelCase**
 
-🔹 You pass a **function**, not a function call
+* You pass a **function**, not a function call
 
 ---
 
@@ -847,12 +1058,15 @@ function Button() {
 }
 ```
 
-🔹 `onClick` is a React event
-🔹 `handleClick` runs when button is clicked
+* `onClick` is a React event
+* `handleClick` runs when button is clicked
+
+---
 
 ---
 
 📌 **Query-style answer:**
+
 **Event handling in React is done by passing functions to event handlers like onClick, onChange, etc.**
 
 
@@ -861,7 +1075,7 @@ function Button() {
 <h2 id="between_React_Events_and_DOM_Events" style="color:green"> 🆚 Difference between React Events and DOM Events </h2>
 
 
-| 🔹 React Events                          | 🔸 DOM Events                           |
+| * React Events                          | 🔸 DOM Events                           |
 | ---------------------------------------- | --------------------------------------- |
 | ⚛️ Uses **Synthetic Events**             | 🌐 Uses **Native browser events**       |
 | 🧩 Works same across all browsers        | 🌍 Browser-dependent behavior           |
@@ -869,7 +1083,10 @@ function Button() {
 | 📌 Passed as function                    | 📎 Uses event listeners                 |
 | 🚀 Better performance (event pooling)    | 🐌 No optimization                      |
 
+---
+
 📌 **Query-style answer:**
+
 **React events are synthetic, cross-browser, and optimized, while DOM events are native browser events.**
 
 
@@ -882,9 +1099,9 @@ function Button() {
 
 ⚛️ A **Synthetic Event** is a **wrapper around the browser’s native event** used by React.
 
-🔹 Works the **same across all browsers**
-🔹 Improves **performance**
-🔹 Follows the same interface as native events
+* Works the **same across all browsers**
+* Improves **performance**
+* Follows the same interface as native events
 
 ---
 
@@ -900,12 +1117,15 @@ function InputBox() {
 }
 ```
 
-🔹 `e` is a **Synthetic Event**
-🔹 React handles it internally
+* `e` is a **Synthetic Event**
+* React handles it internally
+
+---
 
 ---
 
 📌 **Query-style answer:**
+
 **A synthetic event is React’s cross-browser wrapper around native DOM events.**
 
 
@@ -933,11 +1153,14 @@ function Button() {
 ```
 
 📝 **Explanation (simple):**
-🔹 `onClick` expects a **function**, not a function call
-🔹 Arrow function `() =>` is used to **pass arguments**
-🔹 `"Hello React"` is passed to `handleClick` when button is clicked
+* `onClick` expects a **function**, not a function call
+* Arrow function `() =>` is used to **pass arguments**
+* `"Hello React"` is passed to `handleClick` when button is clicked
+
+---
 
 📌 **Query-style answer:**
+
 **Arguments are passed to event handlers using arrow functions inside JSX.**
 
 
@@ -967,10 +1190,13 @@ function Form() {
 }
 ```
 
-🔹 `e` is a **Synthetic Event**
-🔹 `preventDefault()` stops browser default action
+* `e` is a **Synthetic Event**
+* `preventDefault()` stops browser default action
+
+---
 
 📌 **Query-style answer:**
+
 **Default browser behavior in React is prevented using `event.preventDefault()`.**
 
 
@@ -988,8 +1214,8 @@ function Form() {
 
 🔀 **Conditional rendering** means **showing UI based on a condition**.
 
-🔹 UI changes depending on state or props
-🔹 Similar to conditions in JavaScript (`if`, `&&`, `?:`)
+* UI changes depending on state or props
+* Similar to conditions in JavaScript (`if`, `&&`, `?:`)
 
 ---
 
@@ -1005,12 +1231,15 @@ function LoginStatus({ isLoggedIn }) {
 }
 ```
 
-🔹 If `isLoggedIn` is `true` → shows **Welcome User**
-🔹 If `isLoggedIn` is `false` → shows **Please Login**
+* If `isLoggedIn` is `true` → shows **Welcome User**
+* If `isLoggedIn` is `false` → shows **Please Login**
+
+---
 
 ---
 
 📌 **Query-style answer:**
+
 **Conditional rendering is used to display different UI based on conditions.**
 
 
@@ -1043,12 +1272,15 @@ function List() {
 }
 ```
 
-🔹 `map()` creates elements from array
-🔹 `key` helps React identify items
+* `map()` creates elements from array
+* `key` helps React identify items
+
+---
 
 ---
 
 📌 **Query-style answer:**
+
 **Lists in React are rendered using the map() function.**
 
 
@@ -1124,12 +1356,15 @@ function List() {
 }
 ```
 
-🔹 Keys stay **same even if order changes**
-🔹 React updates UI **correctly**
+* Keys stay **same even if order changes**
+* React updates UI **correctly**
+
+---
 
 ---
 
 📌 **Query-style answer:**
+
 **Index as key is not recommended because changing list order changes indexes, causing incorrect UI rendering.**
 
 
@@ -1147,9 +1382,9 @@ function List() {
 
 🪝 **Hooks** are **special functions** that let you use **state and other React features** in **functional components**.
 
-🔹 Introduced in **React 16.8**
-🔹 Remove the need for class components
-🔹 Make code **simpler and reusable**
+* Introduced in **React 16.8**
+* Remove the need for class components
+* Make code **simpler and reusable**
 
 📌 Common Hooks:
 
@@ -1157,17 +1392,20 @@ function List() {
 * `useEffect` – handle side effects
 * `useContext` – use context data
 
+---
+
 📌 **Query-style answer:**
+
 **Hooks allow functional components to use state and lifecycle features.**
 
 🧠 **How React Uses Keys Internally?**
 
 🔑 **Keys help React identify which list items changed, added, or removed**
 
-🔹 During re-render, React compares **old list vs new list**
-🔹 It matches items using their **keys**, not positions
-🔹 Same key → React **reuses the component**
-🔹 Different key → React **creates or removes component**
+* During re-render, React compares **old list vs new list**
+* It matches items using their **keys**, not positions
+* Same key → React **reuses the component**
+* Different key → React **creates or removes component**
 
 ---
 🧩 **What Are Hooks? (With Simple Example)**
@@ -1195,21 +1433,24 @@ function Counter() {
 }
 ```
 
-🔹 `useState` is a **hook**
-🔹 `count` is state
-🔹 `setCount` updates state
-🔹 UI updates automatically
+* `useState` is a **hook**
+* `count` is state
+* `setCount` updates state
+* UI updates automatically
+
+---
 
 📌 **Query-style answer:**
+
 **Hooks are functions that let functional components use state and other React features.**
 
 ---
 
 ### 🪝 `useEffect`
 
-🔹 Used to handle **side effects**
-🔹 Runs after component renders
-🔹 Examples: API calls, timers, DOM updates
+* Used to handle **side effects**
+* Runs after component renders
+* Examples: API calls, timers, DOM updates
 
 ### ✅ Simple Example
 
@@ -1226,17 +1467,20 @@ function Page() {
 }
 ```
 
-🔹 Runs when component loads
+* Runs when component loads
+
+---
 
 📌 **Query-style answer:**
+
 **`useEffect` is used to perform side effects in functional components.**
 
 ---
 
 ### 🪝 `useContext`
 
-🔹 Used to **share data without prop drilling**
-🔹 Accesses data from Context API
+* Used to **share data without prop drilling**
+* Accesses data from Context API
 
 ### ✅ Simple Example
 
@@ -1259,9 +1503,13 @@ function Child() {
 }
 ```
 
-🔹 No props passed through multiple components
+* No props passed through multiple components
+
+---
 
 📌 **Query-style answer:**
+
+
 **`useContext` is used to access shared data from Context without prop drilling.**
 
 
@@ -1293,9 +1541,9 @@ class Counter extends React.Component {
 }
 ```
 
-🔹 More code
-🔹 `this` keyword confusion
-🔹 Hard to reuse logic
+* More code
+* `this` keyword confusion
+* Hard to reuse logic
 
 ---
 
@@ -1319,13 +1567,16 @@ function Counter() {
 }
 ```
 
-🔹 Less code
-🔹 No `this` keyword
-🔹 Logic is easy to reuse
+* Less code
+* No `this` keyword
+* Logic is easy to reuse
+
+---
 
 ---
 
 📌 **Query-style answer:**
+
 **Hooks were introduced to use state and lifecycle features in functional components and simplify React code.**
 
 
@@ -1412,7 +1663,10 @@ function useCounter() {
 
 ---
 
+---
+
 📌 **Query-style answer:**
+
 **Hooks must be called at the top level and only inside React functional components or custom hooks.**
 
 
@@ -1425,8 +1679,8 @@ function useCounter() {
 
 🪝 **`useState`** is a **Hook** used to **add and manage state** in functional components.
 
-🔹 It stores data that can change
-🔹 When state changes, UI **re-renders automatically**
+* It stores data that can change
+* When state changes, UI **re-renders automatically**
 
 ---
 
@@ -1447,13 +1701,16 @@ function Counter() {
 }
 ```
 
-🔹 `count` → state value
-🔹 `setCount` → function to update state
-🔹 `0` → initial value
+* `count` → state value
+* `setCount` → function to update state
+* `0` → initial value
+
+---
 
 ---
 
 📌 **Query-style answer:**
+
 **`useState` is a React Hook that allows functional components to store and update state.**
 
 
@@ -1467,8 +1724,8 @@ function Counter() {
 
 🪝 **`useEffect`** is a **Hook** used to perform **side effects** in functional components.
 
-🔹 Runs after the component renders
-🔹 Used for API calls, timers, subscriptions, DOM updates
+* Runs after the component renders
+* Used for API calls, timers, subscriptions, DOM updates
 
 ---
 
@@ -1487,12 +1744,15 @@ function Page() {
 }
 ```
 
-🔹 Effect runs when component loads
-🔹 `[]` controls when effect runs
+* Effect runs when component loads
+* `[]` controls when effect runs
+
+---
 
 ---
 
 📌 **Query-style answer:**
+
 **`useEffect` is used to handle side effects in functional components.**
 
 
