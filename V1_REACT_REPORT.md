@@ -50,7 +50,7 @@
 
 ## 5. Events
 
-* What is Event Handling?
+* [What is Event Handling?](What_is_Event_Handling)
 * [How event handling works in React?](#Event_Handling_Works)
 * [Difference between React events and DOM events](#between_React_Events_and_DOM_Events)
 * [What is synthetic event?](#What_is_a_Synthetic_Event)
@@ -63,10 +63,6 @@
 ## 6. Conditional Rendering
 
 * [What is conditional rendering?](#Conditional_Rendering)
-* Different ways to do conditional rendering
-* When to use ternary operator in JSX?
-* When to use logical AND (`&&`)?
-* How to render components conditionally?
 
 ---
 
@@ -82,189 +78,68 @@
 
 ## 8. Hooks 
 
-
 * [What are hooks?](#Hooks_in_React)
 * [Why hooks were introduced?](#Why_hooks_were_introduced)
 * [Rules of hooks](#Rules_of_Hooks)
 
 ---
 
+
 ## 9. Hooks (Detailed)
 
 ### Basic Hooks
 
-* What is `useState`?
-* Why `useState` is used?
-* What is `useEffect`?
-* Why `useEffect` is used?
-* Difference between `useEffect` and lifecycle methods
-* Cleanup function in `useEffect`
-* Dependency array behavior
+* [What is `useState` and Why is used?](#What_is_useState)
+* [What is `useEffect` and why is used?](#What_is_useEffect)
+* [Cleanup function in `useEffect`](#Cleanup_Function_in_useEffect)
+* [Dependency Array Behavior in useEffect](#Dependency_Array_Behavior)
 
 ### Context Hook
 
-* What is `useContext`?
-* What problem does `useContext` solve?
+* [What is `useContext`?](What_is_useContext)
+* [What problem does `useContext` solve?](#What_problem_does_useContext)
 
 ### Ref Hook
 
-* What is `useRef`?
-* Why `useRef` is used?
-* Difference between `useRef` and `useState`
+* [What is `useRef` and why is used?](#What_is_useRef)
+* [Difference between `useRef` and `useState`](#Difference_between_useRef_and_useState)
 
 ### Memoization Hooks
 
-* What is `useMemo`?
-* Why `useMemo` is used?
-* What is `useCallback`?
-* Why `useCallback` is used?
-* Difference between `useMemo` and `useCallback`
+* [What is `useMemo` and why is used?](#What_is_useMemo)
+* [What is `useCallback` and why is used?](#What_is_useCallback)
+* [Difference between `useMemo` and `useCallback`](#Difference_between_useMemo_and_useCallback)
 
 ### Reducer Hook
 
-* What is `useReducer`?
-* Why `useReducer` is used?
-* Difference between `useReducer` and `useState`
+* [What is `useReducer`and why is used?](#What_is_useReducer)
+* [Difference between `useReducer` and `useState`](#Difference_between_useReducer_and_useState)
 
 ### Layout & DOM Hooks
 
-* What is `useLayoutEffect`?
-* Difference between `useEffect` and `useLayoutEffect`
+* [What is `useLayoutEffect`?](#What_is_useLayoutEffect)
+* [Difference between `useEffect` and `useLayoutEffect`](#between_useEffect_and_useLayoutEffect)
 
 ### Advanced Hooks
 
-* What is `useImperativeHandle`?
-* Why `useImperativeHandle` is used?
-* What is `useDebugValue`?
-* Why `useDebugValue` is used?
+* What is `useImperativeHandle` and why is used?
+* What is `useDebugValue` and why is used?
 
 ### Concurrent Hooks
 
-* What is `useTransition`?
-* Why `useTransition` is used?
-* What is `useDeferredValue`?
-* Why `useDeferredValue` is used?
+* What is `useTransition` and why is used?
+* What is `useDeferredValue` and why is used?
 
 ### Utility Hook
 
-* What is `useId`?
-* Why `useId` is used?
+* What is `useId` and Why `useId` is used?
 
 ### Custom Hooks
 
-* What is a custom hook?
-* Why custom hooks are created?
-* When to create custom hooks?
+* [What is a custom hook and Why custom hooks are created and When to create custom hooks?](#What_is_a_Custom_Hook)
+
 
 ---
-
-## 10. Lifecycle (Conceptual)
-
-* What are React lifecycle methods?
-* Mounting phase methods
-* Updating phase methods
-* Unmounting phase methods
-* Which lifecycle methods are deprecated?
-* How lifecycle works with hooks?
-
----
-
-## 11. Forms
-
-* Controlled vs Uncontrolled components
-* How to handle form input in React?
-* How to handle multiple inputs?
-* How to validate forms?
-* How to handle checkbox and radio inputs?
-* What is form submission flow?
-
----
-
-## 13. Routing (React Router)
-
-* What is React Router?
-* Difference between BrowserRouter and HashRouter
-* What is Route?
-* What is Link vs NavLink?
-* What is `useParams`?
-* What is `useNavigate`?
-* Protected routes concept
-* Lazy loading routes
-
----
-
-## 14. Performance Optimization
-
-* How to optimize React performance?
-* What is `React.memo`?
-* What causes unnecessary re-renders?
-* How to prevent re-rendering?
-* What is code splitting?
-* What is lazy loading?
-
----
-
-## 15. State Management
-
-* What is lifting state up?
-* What is Context API?
-* When to use Redux?
-* Redux vs Context API
-* What is global state?
-* What is local state?
-
----
-
-## 16. Redux (Core)
-
-* What is Redux?
-* Core principles of Redux
-* What is store?
-* What is action?
-* What is reducer?
-* What is dispatch?
-* Redux flow diagram
-* What is middleware?
-
----
-
-## 17. API & Data Handling
-
-* How to fetch data in React?
-* Axios vs Fetch
-* Where to call API in React?
-* How to handle loading state?
-* How to handle error state?
-* How to cancel API calls?
-
----
-
-## 18. Security & Best Practices
-
-* How to prevent XSS in React?
-* Is React secure by default?
-* How to store tokens safely?
-* Why not store secrets in frontend?
-* Best practices for React apps
-
----
-
-## 20. Build & Deployment
-
-* What happens during React build?
-* Development vs production build
-* How to deploy React app?
-* Environment variables in React
-* How `.env` works?
-
----
-
-## Rendering
-
-* What is Rendering?
-* Why re-render happens?
-* What causes re-render?
-* How to prevent unnecessary re-render?
 
 ---
 
@@ -1241,12 +1116,43 @@ const [state, dispatch] = useReducer(reducer, initialState);
 
 <h1 style="text-align:center;" > Events </h1>
 
-<hr style="border: 2px solid green;">
-
 ![img](./Reference/Imgs/event_handling.png)
 
-<h2 id="Event_Handling_Works" style="color:green; text-align:center;"> How Event Handling Works in React? </h2>
+<hr style="border: 2px solid green;">
 
+<h2 id="What_is_Event_Handling" style="color:green; text-align:center;"> 🎯 What is Event Handling in React? ⚛️ </h2>
+
+**Event Handling** in React is the process of **responding to user actions** like clicks, input changes, or key presses.
+
+🔹 Handles events using **camelCase syntax 🐪**
+🔹 Uses **functions as event handlers 🧩**
+🔹 Ensures **controlled and predictable UI updates 🔄**
+
+---
+
+### **💻 Code Sample**
+
+```jsx
+function ClickButton() {
+  const handleClick = () => {
+    alert("Button Clicked!");
+  };
+
+  return <button onClick={handleClick}>Click Me</button>;
+}
+```
+
+---
+
+### **🎯 Interview One-Line Answer**
+
+> **Event handling in React allows components to respond to user actions such as clicks or input changes using event handler functions.**
+
+
+<hr style="border: 2px solid green;">
+
+
+<h2 id="Event_Handling_Works" style="color:green; text-align:center;"> How Event Handling Works in React? </h2>
 
 
 * React uses **synthetic events** (wrapper around browser events)
@@ -1885,4 +1791,664 @@ function useCounter() {
 
 <hr style="border: 2px solid green;">
 
+<h2 id="What_is_useState" style="color:green; text-align:center;"> 🪝 What is useState and Why is it Used? ⚛️ </h2>
 
+
+**`useState`** is a React Hook that allows **functional components to manage state**.
+
+- Stores **dynamic data 🧠** inside a component
+- Updates UI when state changes 🔄
+- Replaces state handling in class components ⚡
+- Makes components **interactive 🎯**
+
+---
+
+### **💻 Code Sample**
+
+```jsx
+import { useState } from "react";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <button onClick={() => setCount(count + 1)}>
+      Count: {count}
+    </button>
+  );
+}
+```
+
+---
+
+### **🎯 Interview One-Line Answer**
+
+> **`useState` is a React Hook used to add and manage state in functional components and trigger UI updates when the state changes.**
+
+<hr style="border: 2px solid green;">
+
+<h2 id="What_is_useEffect" style="color:green; text-align:center;"> 🪝 What is useEffect and Why is it Used? ⚛️ </h2>
+
+**`useEffect`** is a React Hook used to **handle side effects** in functional components.
+
+- Runs code after component render 🔄
+- Used for **API calls 🌐**, **subscriptions 📡**, **timers ⏱️**
+- Replaces lifecycle methods like `componentDidMount`
+- Keeps logic clean and organized 🧹
+
+---
+
+### **💻 Code Sample**
+
+```jsx
+import { useEffect } from "react";
+
+function PageTitle() {
+  useEffect(() => {
+    document.title = "React Page";
+  }, []);
+
+  return <h1>Hello React</h1>;
+}
+```
+
+---
+
+### **🎯 Interview One-Line Answer**
+
+> **`useEffect` is a React Hook used to perform side effects such as data fetching or DOM updates after rendering.**
+
+<hr style="border: 2px solid green;">
+
+<h2 id="Cleanup_Function_in_useEffect" style="color:green; text-align:center;"> 🧹 Cleanup Function in `useEffect` ⚛️ </h2>
+
+
+A **cleanup function** is used to **clean up side effects** when a component **unmounts or before the effect re-runs**.
+
+- Prevents **memory leaks 🚫**
+- Clears **timers ⏱️**, **subscriptions 📡**, **event listeners 🎧**
+- Runs **before the next effect** or on **component unmount 🔄**
+
+---
+
+### **💻 Code Sample**
+
+```jsx
+import { useEffect } from "react";
+
+function Timer() {
+  useEffect(() => {
+    const interval = setInterval(() => {
+      console.log("Running...");
+    }, 1000);
+
+    return () => {
+      clearInterval(interval); // cleanup
+    };
+  }, []);
+
+  return <h1>Timer Started</h1>;
+}
+```
+
+---
+
+### **🎯 Interview One-Line Answer**
+
+> **The cleanup function in `useEffect` is used to remove or clean side effects like timers or subscriptions to avoid memory leaks.**
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="Dependency_Array_Behavior" style="color:green; text-align:center;"> 📦 Dependency Array Behavior in `useEffect` ⚛️ </h2>
+
+
+The **dependency array** controls **when `useEffect` runs**.
+
+🔹 **No dependency array ❌**
+
+→ Effect runs **after every render 🔄**
+
+```jsx
+useEffect(() => {
+  console.log("Runs on every render");
+});
+```
+
+---
+
+🔹 **Empty dependency array `[]` 🟦**
+
+→ Effect runs **only once (on mount) 🎯**
+
+```jsx
+useEffect(() => {
+  console.log("Runs once");
+}, []);
+```
+
+---
+
+🔹 **With dependencies `[value]` 🧩**
+
+→ Effect runs **when the dependency changes 🔁**
+
+```jsx
+useEffect(() => {
+  console.log("Count changed");
+}, [count]);
+```
+
+---
+
+### **🎯 Interview One-Line Answer**
+
+> **The dependency array in `useEffect` determines when the effect executes based on changes in the listed dependencies.**
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="What_is_useContext" style="color:green; text-align:center;"> 🌐 What is `useContext`? ⚛️ </h2>
+
+
+**`useContext`** is a React Hook used to **access data from Context** without passing props manually.
+
+- Solves **prop drilling 🚫**
+- Shares **global data 🌍** (theme, user, language)
+- Makes code **cleaner & readable 🧹**
+- Works with **Context API 🧠**
+
+---
+
+### **💻 Code Sample**
+
+```jsx
+import { createContext, useContext } from "react";
+
+const ThemeContext = createContext();
+
+function Child() {
+  const theme = useContext(ThemeContext);
+  return <p>Theme: {theme}</p>;
+}
+
+function App() {
+  return (
+    <ThemeContext.Provider value="dark">
+      <Child />
+    </ThemeContext.Provider>
+  );
+}
+```
+
+---
+
+### **🎯 Interview One-Line Answer**
+
+> **`useContext` is a React Hook that allows components to consume context data directly without prop drilling.**
+
+<hr style="border: 2px solid green;">
+
+<h2 id="What_problem_does_useContext" style="color:green; text-align:center;"> 🚫 What Problem Does `useContext` Solve? ⚛️ </h2>
+
+
+`useContext` solves the **prop drilling problem**.
+
+- **Prop Drilling ❌** – Passing data through many nested components
+- Makes code **messy and hard to maintain 🧹**
+- Causes **unnecessary props passing 🔄**
+
+---
+
+### **🎯 Solution with `useContext` 🌐**
+
+- Access shared data **directly where needed 🎯**
+- Cleaner component structure
+- Better readability & maintainability ⚡
+
+---
+
+### **🎯 Interview One-Line Answer**
+
+> **`useContext` solves the prop drilling problem by allowing components to access shared data without passing props through multiple levels.**
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="What_is_useRef" style="color:green; text-align:center;"> 🪝 What is `useRef` and Why is it Used? ⚛️ </h2>
+
+
+**`useRef`** is a React Hook used to **persist mutable values** without causing a re-render.
+
+- Access **DOM elements directly 🧩**
+- Store values that **don’t trigger re-render 🚫**
+- Keeps the **same value across renders 🔒**
+- Improves performance ⚡
+
+---
+
+### **💻 Code Sample**
+
+```jsx
+import { useRef } from "react";
+
+function FocusInput() {
+  const inputRef = useRef(null);
+
+  const focusInput = () => {
+    inputRef.current.focus();
+  };
+
+  return (
+    <>
+      <input ref={inputRef} />
+      <button onClick={focusInput}>Focus</button>
+    </>
+  );
+}
+```
+
+---
+
+### **🎯 Interview One-Line Answer**
+
+> **`useRef` is a React Hook used to access DOM elements and store mutable values without causing component re-renders.**
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="Difference_between_useRef_and_useState" style="color:green; text-align:center;"> ⚖️ Difference between `useRef` and `useState` ⚛️ </h2>
+
+🔹 **Re-render Behavior 🔄**
+
+* `useState` → **Triggers re-render** when value changes
+* `useRef` → **Does NOT trigger re-render 🚫**
+
+🔹 **Value Update 🎯**
+
+* `useState` → Updates via setter function
+* `useRef` → Updates by changing `.current`
+
+🔹 **Purpose 🧠**
+
+* `useState` → Used for **UI-related data 🖼️**
+* `useRef` → Used for **DOM access & mutable values 🧩**
+
+🔹 **Persistence 🔒**
+
+* Both **persist values across renders**
+
+---
+
+### **💻 Code Comparison**
+
+```jsx
+// useState
+const [count, setCount] = useState(0);
+setCount(count + 1); // re-render
+```
+
+```jsx
+// useRef
+const countRef = useRef(0);
+countRef.current += 1; // no re-render
+```
+
+---
+
+### **🎯 Interview One-Line Answer**
+
+> **`useState` updates cause re-renders for UI changes, while `useRef` stores mutable values without triggering re-renders.**
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="What_is_useMemo" style="color:green; text-align:center;"> 🧠 What is `useMemo` and Why is it Used? ⚛️ </h2>
+
+
+**`useMemo`** is a React Hook used to **cache (memoize) the result of a calculation**.
+
+- Avoids **unnecessary recalculations 🚫**
+- Improves **performance ⚡**
+- Recomputes only when **dependencies change 🔄**
+- Useful for **expensive or heavy computations 🧮**
+
+---
+
+### **💻 Code Sample**
+
+```jsx
+import { useMemo } from "react";
+
+function Example({ number }) {
+  const result = useMemo(() => {
+    return number * number;
+  }, [number]);
+
+  return <h2>Result: {result}</h2>;
+}
+```
+
+---
+
+### **🎯 Interview One-Line Answer**
+
+> **`useMemo` is used to memoize computed values so they are recalculated only when dependencies change, improving performance.**
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="What_is_useCallback" style="color:green; text-align:center;"> 🔁 What is `useCallback` and Why is it Used? ⚛️ </h2>
+
+**`useCallback`** is a React Hook used to **memoize functions**.
+
+- Prevents **function re-creation 🚫** on every render
+- Improves **performance ⚡**
+- Useful when passing callbacks to **child components 👶**
+- Works well with **`React.memo` 🧠**
+
+---
+
+### **💻 Code Sample**
+
+```jsx
+import { useCallback, useState } from "react";
+
+function Parent() {
+  const [count, setCount] = useState(0);
+
+  const handleClick = useCallback(() => {
+    setCount(count + 1);
+  }, [count]);
+
+  return <button onClick={handleClick}>Count: {count}</button>;
+}
+```
+
+---
+
+### **🎯 Interview One-Line Answer**
+
+> **`useCallback` is used to memoize functions so they are not recreated on every render, improving performance.**
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="Difference_between_useMemo_and_useCallback" style="color:green; text-align:center;">⚖️ Difference between `useMemo` and `useCallback` ⚛️ </h2>
+
+
+🔹 **What is Memoized 🧠**
+
+* `useMemo` → **Memoizes a value (result of a function)**
+* `useCallback` → **Memoizes a function itself**
+
+🔹 **Return Type 🔁**
+
+* `useMemo` → Returns a **computed value**
+* `useCallback` → Returns a **function reference**
+
+🔹 **Use Case 🎯**
+
+* `useMemo` → For **expensive calculations 🧮**
+* `useCallback` → For **stable callback functions** passed to child components 👶
+
+---
+
+### **💻 Code Comparison**
+
+```jsx
+// useMemo
+const result = useMemo(() => {
+  return count * 2;
+}, [count]);
+```
+
+```jsx
+// useCallback
+const handleClick = useCallback(() => {
+  setCount(count + 1);
+}, [count]);
+```
+
+---
+
+### **🎯 Interview One-Line Answer**
+
+> **`useMemo` memoizes values, while `useCallback` memoizes function references to optimize performance.**
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="What_is_useReducer" style="color:green; text-align:center;">🧩 What is `useReducer` and Why is it Used? ⚛️ </h2>
+
+
+**`useReducer`** is a React Hook used to **manage complex state logic** in functional components.
+
+- Best for **multiple related state values 🧠**
+- Makes state updates **predictable 🎯**
+- Uses a **reducer function (action → state) 🔄**
+- Cleaner alternative to multiple `useState` calls 🧹
+
+---
+
+### **💻 Code Sample**
+
+```jsx
+import { useReducer } from "react";
+
+function reducer(state, action) {
+  switch (action.type) {
+    case "increment":
+      return { count: state.count + 1 };
+    case "decrement":
+      return { count: state.count - 1 };
+    default:
+      return state;
+  }
+}
+
+function Counter() {
+  const [state, dispatch] = useReducer(reducer, { count: 0 });
+
+  return (
+    <>
+      <button onClick={() => dispatch({ type: "increment" })}>+</button>
+      <span>{state.count}</span>
+      <button onClick={() => dispatch({ type: "decrement" })}>-</button>
+    </>
+  );
+}
+```
+
+---
+
+### **🎯 Interview One-Line Answer**
+
+> **`useReducer` is used to manage complex state logic in React by handling state updates through a reducer function.**
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="Difference_between_useReducer_and_useState" style="color:green; text-align:center;">⚖️ Difference between `useReducer` and `useState` ⚛️ </h2>
+
+
+🔹 **State Complexity 🧠**
+
+* `useState` → Best for **simple state values**
+* `useReducer` → Best for **complex or related state logic**
+
+🔹 **Update Method 🔄**
+
+* `useState` → Updates state **directly with setter**
+* `useReducer` → Updates state via **actions and reducer**
+
+🔹 **Readability & Control 🎯**
+
+* `useState` → Less boilerplate, simpler
+* `useReducer` → More structured and predictable
+
+🔹 **Scalability 📈**
+
+* `useState` → Harder to manage as logic grows
+* `useReducer` → Easier to scale for complex flows
+
+---
+
+### **💻 Code Comparison**
+
+```jsx
+// useState
+const [count, setCount] = useState(0);
+setCount(count + 1);
+```
+
+```jsx
+// useReducer
+const [state, dispatch] = useReducer(reducer, { count: 0 });
+dispatch({ type: "increment" });
+```
+
+---
+
+### **🎯 Interview One-Line Answer**
+
+> **`useState` is ideal for simple state, while `useReducer` is better for complex state logic with predictable updates.**
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="What_is_useLayoutEffect" style="color:green; text-align:center;">📐 What is `useLayoutEffect`? ⚛️ </h2>
+
+
+**`useLayoutEffect`** is a React Hook that runs **synchronously after DOM updates but before the browser paints the screen**.
+
+- Used for **DOM measurements 📏**
+- Prevents **UI flickering 🚫**
+- Runs **before `useEffect` ⏱️**
+- Blocks paint until it finishes ⚠️
+
+---
+
+### **💻 Code Sample**
+
+```jsx
+import { useLayoutEffect, useRef } from "react";
+
+function Box() {
+  const boxRef = useRef();
+
+  useLayoutEffect(() => {
+    console.log(boxRef.current.getBoundingClientRect());
+  }, []);
+
+  return <div ref={boxRef}>Box</div>;
+}
+```
+
+---
+
+### **🎯 Interview One-Line Answer**
+
+> **`useLayoutEffect` runs synchronously after DOM changes and before paint, mainly used for DOM measurements and layout calculations.**
+
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="between_useEffect_and_useLayoutEffect" style="color:green; text-align:center;">⚖️ Difference between `useEffect` and `useLayoutEffect` ⚛️ </h2>
+
+🔹 **Execution Time ⏱️**
+
+* `useEffect` → Runs **after the browser paints the UI 🎨**
+* `useLayoutEffect` → Runs **before the browser paints 🚦**
+
+🔹 **Blocking Behavior 🚫**
+
+* `useEffect` → **Non-blocking**, UI renders first
+* `useLayoutEffect` → **Blocking**, delays paint until finished
+
+🔹 **Use Case 🎯**
+
+* `useEffect` → API calls, subscriptions, logging 🌐
+* `useLayoutEffect` → DOM measurements, layout calculations 📏
+
+🔹 **Performance ⚡**
+
+* `useEffect` → Better for performance
+* `useLayoutEffect` → Can affect performance if overused
+
+---
+
+### **💻 Code Comparison**
+
+```jsx
+// useEffect
+useEffect(() => {
+  console.log("Runs after paint");
+}, []);
+```
+
+```jsx
+// useLayoutEffect
+useLayoutEffect(() => {
+  console.log("Runs before paint");
+}, []);
+```
+
+---
+
+### **🎯 Interview One-Line Answer**
+
+> **`useEffect` runs after painting the UI, while `useLayoutEffect` runs synchronously before painting, mainly for DOM-related tasks.**
+
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="What_is_a_Custom_Hook" style="color:green; text-align:center;">🪝 What is a Custom Hook? ⚛️</h2>
+
+
+A **Custom Hook** is a **reusable JavaScript function** that uses React Hooks to **share logic between components**.
+
+- Starts with `use` (naming rule)
+- Contains **stateful logic 🧠**
+- Promotes **code reuse ♻️**
+
+---
+
+### **❓ Why Custom Hooks Are Created? 🤔**
+
+- To **reuse logic** across multiple components ♻️
+- To **avoid code duplication 🚫**
+- To keep components **clean and readable 🧹**
+- To separate **logic from UI 🎨**
+
+---
+
+### **⏰ When to Create Custom Hooks? 📌**
+
+- When **same logic is used in multiple components 🔁**
+- When components become **too large or complex 🧩**
+- When you want **better organization and maintainability 📈**
+
+---
+
+### **💻 Code Sample**
+
+```jsx
+import { useState } from "react";
+
+function useCounter() {
+  const [count, setCount] = useState(0);
+
+  const increment = () => setCount(count + 1);
+
+  return { count, increment };
+}
+```
+
+---
+
+### **🎯 Interview One-Line Answer**
+
+> **Custom hooks are created to reuse stateful logic across components and improve code maintainability.**
