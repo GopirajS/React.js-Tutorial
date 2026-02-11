@@ -161,9 +161,6 @@ document.querySelector('#backToTop').addEventListener('click', function(e) {
 
 * [What is a custom hook and Why custom hooks are created and When to create custom hooks?](#What_is_a_Custom_Hook)
 
-
-
-
 ---
 
 ## 10. Lifecycle (Conceptual)
