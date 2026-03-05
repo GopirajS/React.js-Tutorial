@@ -51,6 +51,57 @@
 * [What is thunk?](#Thunk_in_Redux)
 * [What is two-way data binding?](#Two-Way)
 * [What is one-way data binding?](#One-Way)
+* [What is synthetic event in React?](#Synthetic_Event)
+* [What is batching in React?](#Batching)
+* [What is concurrent rendering in React?](#Concurrent_Rendering)
+* [What is strict mode in React?](#Strict_Mode)
+* [Why is `key` not accessible as a prop?](#key)
+* [What is portal in React?](#Portal)
+* [What are custom hooks?](#Custom_Hooks)
+* [Rules of hooks?](#Rules_of_Hooks)
+* [What happens if you break the rules of hooks?](#break_Hooks)
+* [What is dependency array in `useEffect`?](#Dependency_Array)
+* [What is cleanup function in `useEffect`?](#Cleanup_Function)
+* [Difference between `useMemo` and `useCallback`?](#useMemo_useCallback)
+* [What is memoization?](#Memoization)
+* [What is render prop pattern?](#Render_Prop_Pattern)
+* [What is compound component pattern?](#Compound_Component_Pattern)
+* [What is controlled vs uncontrolled form validation?](#Controlled_Uncontrolled)
+* [What is CORS?](#CORS)
+* [How do you secure React application?](#secure_React)
+* [What is environment variable in React?](#Environment_Variable)
+* [What is Webpack?](#Webpack)
+* [What is Babel?](#Babel)
+* [What is Vite?](#Vite)
+* [Difference between Vite and Create React App?](#Vite_Create_React_App)
+* [What is tree shaking?](#Tree_Shaking)
+* [What is bundling?](#Bundling)
+* [What is minification?](#Minification)
+* [What is polyfill?](#Polyfill)
+* [What is Progressive Web App (PWA)?](#PWA)
+* What is service worker?
+* What is SEO issue in React apps?
+* How to improve performance in React?
+* What is lazy() in React?
+* What is dynamic import?
+* What is suspense fallback?
+* What is hydration mismatch?
+* What is React Fiber?
+* What is time slicing in React?
+* What is useTransition?
+* What is useDeferredValue?
+* What is useId?
+* What is useImperativeHandle?
+* What is useSyncExternalStore?
+* What is error boundary lifecycle?
+* What is PureComponent?
+* Difference between PureComponent and React.memo?
+* What is shallow comparison?
+* What is deep comparison?
+* What is state normalization?
+* What is Flux architecture?
+* What is micro frontend?
+
 
 <hr style="border: 2px solid green;">
 
@@ -1599,3 +1650,908 @@ const [message, setMessage] = React.useState("Hello");
 
 🧠 **In short:**
 One-way data binding means **data flows from state to UI only**, not the other way.
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="Synthetic_Event" style="color:green; text-align:center;">What is Synthetic Event in React?</h2>
+
+- Synthetic Event is a **wrapper around browser event**
+- React creates it to make events work the same in all browsers
+- It follows the same interface as normal DOM events
+- It improves performance
+
+**Simple idea:**
+
+* Browser event happens
+* React wraps it as **Synthetic Event**
+* React handles it in a consistent way
+
+**Example:**
+
+```jsx
+function App() {
+  function handleClick(event) {
+    console.log(event);
+  }
+
+  return <button onClick={handleClick}>Click</button>;
+}
+```
+
+🧠 **In short:**
+Synthetic Event is a React wrapper around the browser event to make events work the same in all browsers.
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="Batching" style="color:green; text-align:center;">Batching in React</h2>
+
+- **Batching** means React **groups multiple state updates together** and does **only one re-render**.
+- This helps React **improve performance**.
+- Instead of updating the UI many times, React **updates it once**.
+
+---
+
+📌 **Example idea**
+
+If we write:
+
+```javascript
+setCount(count + 1);
+setName("John");
+```
+
+React will:
+
+ - group both updates
+ - update the component **one time**
+
+---
+
+🎯 **Why batching is useful**
+
+🔹 Reduces unnecessary re-render
+🔹 Makes React **faster**
+🔹 Improves **application performance**
+
+---
+
+📖 **Short Definition**
+
+👉 **Batching is the process of combining multiple state updates into a single re-render.**
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="Concurrent_Rendering" style="color:green; text-align:center;">What is Concurrent Rendering in React?</h2>
+
+
+- Concurrent rendering is a React feature
+- It lets React work on many tasks at the same time
+- React can pause and continue rendering when needed
+- It keeps the UI smooth and responsive
+
+**Used for:**
+
+* Large UI updates
+* Heavy components
+* Better user experience
+
+**Simple idea:**
+
+* React starts rendering
+* If important work comes → React pauses
+* React finishes important work first
+* Then continues other work
+
+🧠 **In short:**
+Concurrent rendering lets React handle multiple rendering tasks smoothly without blocking the UI.
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="Strict_Mode" style="color:green; text-align:center;">What is Strict Mode in React?</h2>
+
+🔹 Strict Mode is a tool in React
+🔹 It helps find problems in the code
+🔹 It works only in **development mode**
+🔹 It does not affect production
+
+**What it does:**
+
+* Shows warnings for bad code
+* Finds unsafe lifecycle methods
+* Detects unexpected side effects
+
+**Simple idea:**
+
+* React checks your code
+* Shows warnings
+* Helps improve code quality
+
+**Example:**
+
+```jsx id="g5kzq3"
+import React from "react";
+
+function App() {
+  return <h1>Hello</h1>;
+}
+
+export default function Main() {
+  return (
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
+}
+```
+
+🧠 **In short:**
+Strict Mode helps developers find problems and warnings in React code during development.
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="key" style="color:green; text-align:center;">key</h2>
+
+📘 **Why is `key` not accessible as a prop?**
+
+🔹 `key` is a special attribute in React
+🔹 It is used **only by React** to identify list items
+🔹 React uses it during **reconciliation (DOM update)**
+🔹 Because of this, `key` is **not passed to the component as a prop**
+
+**Simple idea:**
+
+* React uses `key` internally
+* Component cannot read `key`
+
+**Example:**
+
+```jsx
+<MyComponent key="1" name="John" />
+```
+
+Inside `MyComponent`:
+
+* `props.name` → available ✅
+* `props.key` → not available ❌
+
+**If you need the value inside component:**
+
+Pass it with another prop.
+
+```jsx
+<MyComponent key="1" id="1" name="John" />
+```
+
+Now inside component:
+
+* `props.id` → available ✅
+
+🧠 **In short:**
+`key` is used internally by React to track elements, so it is not accessible as a normal prop inside components.
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="Portal" style="color:green; text-align:center;">What is Portal in React?</h2>
+
+* Portal is a React feature
+* It allows a component to render outside the parent DOM
+* It is created using `ReactDOM.createPortal()`
+* Useful when UI needs to appear above other elements
+
+**Why is Portal used in React?**
+
+* To create modal popups
+* To show dialog boxes
+* To display tooltips
+* To show notifications
+* Helps place UI elements outside the normal component structure
+
+**Simple Example:**
+
+```javascript
+import ReactDOM from "react-dom";
+
+function Modal({ children }) {
+  return ReactDOM.createPortal(
+    <div className="modal">{children}</div>,
+    document.getElementById("modal-root")
+  );
+}
+```
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="Custom_Hooks" style="color:green; text-align:center;">What are Custom Hooks in React?</h2>
+
+
+* Custom Hook is a **user-created hook**
+* It is used to **reuse logic in different components**
+* Custom Hooks always **start with `use`**
+* Helps make code **clean and reusable**
+
+**Simple Example**
+
+```javascript
+function useCounter() {
+  const [count, setCount] = React.useState(0);
+
+  function increment() {
+    setCount(count + 1);
+  }
+
+  return { count, increment };
+}
+```
+
+**Using Custom Hook**
+
+```javascript
+function App() {
+  const { count, increment } = useCounter();
+
+  return (
+    <div>
+      <p>{count}</p>
+      <button onClick={increment}>Increase</button>
+    </div>
+  );
+}
+```
+
+**Why Custom Hooks are used?**
+
+* Reuse logic
+* Reduce duplicate code
+* Make components cleaner
+* Easy to maintain code
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="Rules_of_Hooks" style="color:green; text-align:center;">Rules of Hooks in React</h2>
+
+
+**Rule 1: Only call Hooks at the top level**
+
+* Do not call Hooks inside loops
+* Do not call Hooks inside conditions
+* Always call Hooks at the top of the component
+
+**Rule 2: Only call Hooks inside React functions**
+
+* Use Hooks inside **React functional components**
+* Or inside **custom hooks**
+
+**Rule 3: Hooks must start with `use`**
+
+* Example: `useState`, `useEffect`
+* Custom hooks also start with `use`
+
+**Simple Example**
+
+```javascript
+function Example() {
+  const [count, setCount] = useState(0); // correct
+
+  return <p>{count}</p>;
+}
+```
+
+**Short Interview Answer**
+
+* Hooks must be called **at the top level**
+* Hooks must be used **only in React functions**
+* Hooks **must start with `use`**
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="break_Hooks" style="color:green; text-align:center;">What happens if you break the Rules of Hooks?</h2>
+
+
+* ⚠️ React will show an **error or warning**
+* ❌ Hooks may **not work correctly**
+* 🔄 Component state may become **incorrect**
+* 🐞 Application may have **bugs or unexpected behavior**
+* 🚫 React cannot track the **correct order of Hooks**
+
+**Simple Example (Wrong)**
+
+```javascript
+if (condition) {
+  const [count, setCount] = useState(0); // ❌ Wrong
+}
+```
+
+**Reason:**
+React Hooks must always be called **in the same order** every time the component renders.
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="Dependency_Array" style="color:green; text-align:center;">What is Dependency Array in `useEffect`?</h2>
+
+
+* Dependency array is the **second argument** of `useEffect`
+* It tells React **when the effect should run**
+* React checks the values in the array
+* If a value changes, the effect runs again
+
+**Example**
+
+```javascript
+useEffect(() => {
+  console.log("Count changed");
+}, [count]);
+```
+
+* The effect runs **only when `count` changes**
+
+**Types of Dependency Array**
+
+* 🔁 **No array** → runs on **every render**
+* 📌 **Empty array `[]`** → runs **only once (on mount)**
+* 🔄 **With values `[count]`** → runs when **that value changes**
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="Cleanup_Function" style="color:green; text-align:center;">What is Cleanup Function in `useEffect`?</h2>
+
+* Cleanup function is a **function returned inside `useEffect`**
+* It is used to **clean or remove side effects**
+* It runs **before the component unmounts**
+* It also runs **before the effect runs again**
+
+**Example**
+
+```javascript
+useEffect(() => {
+  const timer = setInterval(() => {
+    console.log("Running...");
+  }, 1000);
+
+  return () => {
+    clearInterval(timer); // cleanup
+  };
+}, []);
+```
+
+**Why Cleanup Function is used?**
+
+* 🧹 Stop timers
+* 🔌 Remove event listeners
+* 📡 Close subscriptions
+* 🚫 Prevent memory leaks
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="useMemo_useCallback" style="color:green; text-align:center;">Difference between `useMemo` and `useCallback`</h2>
+
+
+**What is `useMemo`?**
+
+* `useMemo` is a React Hook
+* It **memoizes a value**
+* Used to **store the result of a calculation**
+* Runs only when dependencies change
+
+**Example**
+
+```javascript
+const total = useMemo(() => {
+  return price * quantity;
+}, [price, quantity]);
+```
+
+**What is `useCallback`?**
+
+* `useCallback` is a React Hook
+* It **memoizes a function**
+* Prevents the function from being recreated on every render
+* Runs only when dependencies change
+
+**Example**
+
+```javascript
+const handleClick = useCallback(() => {
+  console.log("Button clicked");
+}, []);
+```
+
+**Main Difference**
+
+* `useMemo` → **returns a value**
+* `useCallback` → **returns a function**
+
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="Memoization" style="color:green; text-align:center;">What is Memoization?</h2>
+
+
+* Memoization is a **performance optimization technique**
+* It **stores the result of a function**
+* If the same input comes again, it **returns the stored result**
+* It **avoids recalculating the same value**
+
+**Why Memoization is used?**
+
+* 🚀 Improves performance
+* 🔁 Avoids repeated calculations
+* ⚡ Makes applications faster
+
+**Simple Example**
+
+```javascript
+const result = useMemo(() => {
+  return num * 2;
+}, [num]);
+```
+
+* React **remembers the result**
+* It recalculates **only when `num` changes**.
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="Render_Prop_Pattern" style="color:green; text-align:center;">What is Render Prop Pattern in React?</h2>
+
+* Render Prop is a **technique to share code between components**
+* A component **passes a function as a prop**
+* That function **returns JSX to render**
+* It helps **reuse logic**
+
+**Simple Example**
+
+```javascript
+function DataProvider(props) {
+  const data = "Hello";
+
+  return props.render(data);
+}
+```
+
+**Using the Component**
+
+```javascript
+<DataProvider render={(data) => <h1>{data}</h1>} />
+```
+
+**Why Render Prop is used?**
+
+* ♻️ Reuse component logic
+* 🧩 Share data between components
+* 🧹 Makes code more flexible
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="Compound_Component_Pattern" style="color:green; text-align:center;">What is Compound Component Pattern in React?</h2>
+
+* Compound Component Pattern is a **design pattern in React**
+* Multiple components **work together as one component**
+* Parent component **controls the state**
+* Child components **share that state**
+
+**Example**
+
+```javascript
+function Tabs({ children }) {
+  return <div>{children}</div>;
+}
+
+function Tab() {
+  return <button>Tab</button>;
+}
+
+Tabs.Tab = Tab;
+```
+
+**Using the Component**
+
+```javascript
+<Tabs>
+  <Tabs.Tab />
+  <Tabs.Tab />
+</Tabs>
+```
+
+**Why Compound Component Pattern is used?**
+
+* 🧩 Group related components
+* 🔁 Reuse components easily
+* 🧹 Keep code organized
+
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="Controlled_Uncontrolled" style="color:green; text-align:center;">What is controlled vs uncontrolled form validation?</h2>
+
+**Controlled Form Validation**
+
+* Form data is **controlled by React state**
+* Input value is stored in **`useState`**
+* Validation is done **inside React code**
+* React updates the input value
+
+**Example**
+
+```javascript
+const [name, setName] = useState("");
+
+<input 
+  value={name} 
+  onChange={(e) => setName(e.target.value)} 
+/>
+```
+
+**Uncontrolled Form Validation**
+
+* Form data is **controlled by the DOM**
+* React uses **`ref` to access the value**
+* Input value is **not stored in React state**
+* Validation is done **using DOM values**
+
+**Example**
+
+```javascript
+const inputRef = useRef();
+
+<input ref={inputRef} />
+```
+
+**Main Difference**
+
+* Controlled → **React controls form data (state)**
+* Uncontrolled → **DOM controls form data (ref)**
+
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="CORS" style="color:green; text-align:center;">What is CORS?</h2>
+
+
+* CORS stands for **Cross-Origin Resource Sharing**
+* It is a **security feature in browsers**
+* It controls **requests between different domains**
+* It prevents **unauthorized access to resources**
+
+**Example**
+
+* Frontend: `https://example.com`
+* API: `https://api.example.com`
+
+If the frontend tries to access the API, the **server must allow CORS**.
+
+**Why CORS is used?**
+
+* 🔒 Improves security
+* 🌐 Controls cross-domain requests
+* 🛡️ Prevents unauthorized access
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="secure_React" style="color:green; text-align:center;">How do you secure a React application?</h2>
+
+
+- 🔐 **Use HTTPS**  
+  Protects data between client and server.
+
+- 🛡️ **Prevent XSS attacks**  
+  Avoid using `dangerouslySetInnerHTML`.
+
+- 🔑 **Use authentication**  
+  Use **JWT or OAuth** for user login.
+
+- 🚫 **Do not store sensitive data in localStorage**  
+  Store tokens securely.
+
+- 🔒 **Protect API endpoints**  
+  Use authentication and authorization.
+
+- 📦 **Keep dependencies updated**  
+  Update React and npm packages regularly.
+
+- 🧹 **Validate user input**  
+  Check user data before sending to server.
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="Environment_Variable" style="color:green; text-align:center;">What is Environment Variable in React?</h2>
+
+* Environment variables are **special variables used to store configuration values**
+* They help store **API URLs, keys, and settings**
+* Values can change **for different environments** (development, production)
+* In React, variables must start with **`REACT_APP_`**
+
+**Example**
+
+`.env` file
+
+```
+REACT_APP_API_URL=https://api.example.com
+```
+
+**Using in React**
+
+```javascript
+const apiUrl = process.env.REACT_APP_API_URL;
+```
+
+**Why Environment Variables are used?**
+
+* 🔒 Hide configuration values
+* ⚙️ Manage different environments
+* 🧹 Keep code clean
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="Webpack" style="color:green; text-align:center;">What is Webpack?</h2>
+
+
+* Webpack is a **module bundler**
+* It **combines multiple files into one bundle**
+* Used in **modern JavaScript applications**
+* Helps manage **JS, CSS, images, and other files**
+
+**Example**
+
+* Combines files like:
+
+  * `index.js`
+  * `style.css`
+  * images
+
+➡️ Into a **single bundled file**
+
+**Why Webpack is used?**
+
+* 📦 Bundles project files
+* ⚡ Improves performance
+* 🧹 Organizes project dependencies
+* 🚀 Makes apps faster to load
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="Babel" style="color:green; text-align:center;">What is Babel?</h2>
+
+* Babel is a **JavaScript compiler**
+* It **converts modern JavaScript (ES6+) into older JavaScript (ES5)**
+* Helps code run in **older browsers**
+* Commonly used in **React applications**
+
+**Example**
+
+**Modern JavaScript (ES6)**
+
+```javascript
+const add = (a, b) => a + b;
+```
+
+**Converted by Babel (ES5)**
+
+```javascript
+var add = function(a, b) {
+  return a + b;
+};
+```
+
+**Why Babel is used?**
+
+* 🌐 Supports old browsers
+* ⚙️ Converts modern JS syntax
+* 🚀 Helps run React and modern JavaScript code
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="Vite" style="color:green; text-align:center;">What is Vite?</h2>
+
+
+* Vite is a **modern frontend build tool**
+* It is used to **create and run web applications**
+* It provides **very fast development server**
+* Commonly used for **React, Vue, and other frameworks**
+
+**Example**
+
+Create a React app using Vite:
+
+```bash
+npm create vite@latest my-app
+```
+
+**Why Vite is used?**
+
+* ⚡ Very fast startup
+* 🔄 Fast hot reload (HMR)
+* 📦 Simple configuration
+* 🚀 Faster than traditional build tools like Webpack
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="Vite_Create_React_App" style="color:green; text-align:center;">Difference between Vite and Create React App</h2>
+
+
+**What is Vite?**
+
+* ⚡ Very fast development server
+* 🚀 Faster project startup
+* 🔄 Fast Hot Module Replacement (HMR)
+* 🧹 Simple and lightweight configuration
+
+**What is Create React App (CRA)?**
+
+* 📦 Official React setup tool
+* 🛠 Uses Webpack internally
+* ⏳ Slower startup compared to Vite
+* ⚙️ More configuration behind the scenes
+
+**Main Differences**
+
+* ⚡ **Vite** → Faster build and reload
+* 🐢 **CRA** → Slower development server
+* 🧹 **Vite** → Lightweight and modern
+* 📦 **CRA** → Older but stable setup tool
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="Tree_Shaking" style="color:green; text-align:center;">What is Tree Shaking?</h2>
+
+
+* Tree Shaking is a **process to remove unused code**
+* It helps **reduce the final bundle size**
+* Used in build tools like **Webpack and Vite**
+* Keeps only the **code that is actually used**
+
+**Example**
+
+```javascript
+export function add(a, b) {
+  return a + b;
+}
+
+export function multiply(a, b) {
+  return a * b;
+}
+```
+
+If the app only uses **`add()`**, the **`multiply()`** function will be removed during build.
+
+**Why Tree Shaking is used?**
+
+* 📦 Smaller bundle size
+* ⚡ Faster website loading
+* 🧹 Removes unused code
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="Bundling" style="color:green; text-align:center;">What is Bundling?</h2>
+
+* Bundling is the **process of combining multiple files into one file**
+* It combines **JavaScript, CSS, and other files**
+* Helps reduce the **number of requests to the server**
+* Done by tools like **Webpack, Vite, and Parcel**
+
+**Example**
+
+Files in project:
+
+* `app.js`
+* `utils.js`
+* `style.css`
+
+➡️ After bundling → **one bundled file (bundle.js)**
+
+**Why Bundling is used?**
+
+* 📦 Combines project files
+* ⚡ Improves website loading speed
+* 🧹 Organizes application code
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="Minification" style="color:green; text-align:center;">What is Minification?</h2>
+
+
+* Minification is the **process of removing unnecessary characters from code**
+* It removes **spaces, comments, and line breaks**
+* It makes the **file size smaller**
+* Helps the website **load faster**
+
+**Example**
+
+**Before Minification**
+
+```javascript
+function add(a, b) {
+  return a + b;
+}
+```
+
+**After Minification**
+
+```javascript
+function add(a,b){return a+b;}
+```
+
+**Why Minification is used?**
+
+* 📦 Reduces file size
+* ⚡ Improves website speed
+* 🚀 Faster loading time
+
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="Polyfill" style="color:green; text-align:center;">What is Polyfill?</h2>
+
+* Polyfill is **JavaScript code that adds support for modern features in older browsers**
+* It helps old browsers **run new JavaScript features**
+* Used when a browser **does not support a feature**
+
+**Example**
+
+`Array.includes()` may not work in older browsers.
+
+Polyfill adds support for it.
+
+```javascript
+if (!Array.prototype.includes) {
+  Array.prototype.includes = function(value) {
+    return this.indexOf(value) !== -1;
+  };
+}
+```
+
+**Why Polyfill is used?**
+
+* 🌐 Supports older browsers
+* ⚙️ Enables modern JavaScript features
+* 🚀 Improves browser compatibility
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="PWA" style="color:green; text-align:center;">What is Progressive Web App (PWA)?</h2>
+
+
+* PWA is a **web application that works like a mobile app**
+* It runs in a **web browser**
+* Users can **install it on their device**
+* It can work **offline or with slow internet**
+
+**Examples of PWA Features**
+
+* 📱 Installable on mobile and desktop
+* 🌐 Works offline using service workers
+* 🔔 Supports push notifications
+* ⚡ Fast loading and good performance
+
+**Why PWA is used?**
+
+* 🚀 Better user experience
+* 📱 App-like behavior in browser
+* 🌐 Works without internet
+* 🧹 No need to install from app store
