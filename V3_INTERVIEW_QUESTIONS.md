@@ -79,28 +79,22 @@
 * [What is minification?](#Minification)
 * [What is polyfill?](#Polyfill)
 * [What is Progressive Web App (PWA)?](#PWA)
-* What is service worker?
-* What is SEO issue in React apps?
-* How to improve performance in React?
-* What is lazy() in React?
-* What is dynamic import?
-* What is suspense fallback?
-* What is hydration mismatch?
-* What is React Fiber?
-* What is time slicing in React?
-* What is useTransition?
-* What is useDeferredValue?
-* What is useId?
-* What is useImperativeHandle?
-* What is useSyncExternalStore?
-* What is error boundary lifecycle?
-* What is PureComponent?
-* Difference between PureComponent and React.memo?
-* What is shallow comparison?
-* What is deep comparison?
-* What is state normalization?
-* What is Flux architecture?
-* What is micro frontend?
+* 
+* [What is service worker?](#Service_Worker)
+* [What is SEO issue in React apps?](#SEO_Issue)
+* [How to improve performance in React?](#improve_performance)
+* [What is lazy() in React?](#lazy)
+* [What is dynamic import?](#Dynamic_Import)
+* [What is suspense fallback?](#Suspense_Fallback)
+* [What is hydration mismatch?](#Hydration_Mismatch)
+* [What is React Fiber?](#React_Fiber)
+* [What is time slicing in React?](#Time_Slicing)
+  
+* [What is useTransition?](#useTransition)
+* [What is useDeferredValue?](#useDeferredValue)
+* [What is useId?](#useId)
+* [What is useImperativeHandle?](#useImperativeHandle)
+* [What is useSyncExternalStore?](#useSyncExternalStore)
 
 
 <hr style="border: 2px solid green;">
@@ -561,10 +555,10 @@ Controlled components are form inputs whose value is controlled by React state.
 
 <h2 id="Uncontrolled_Components" style="color:green; text-align:center;">What are Uncontrolled Components?</h2>
 
-🔹 Uncontrolled component means form input is controlled by **DOM**, not React state
-🔹 Value is taken using **ref**
-🔹 React does not control the input value
-🔹 Data is read only when needed (like on submit)
+- Uncontrolled component means form input is controlled by **DOM**, not React state
+- Value is taken using **ref**
+- React does not control the input value
+- Data is read only when needed (like on submit)
 
 
 **How it works (simple):**
@@ -637,11 +631,11 @@ Prop drilling = **Parent → Child → Grandchild** passing data, even when midd
 
 <h2 id="avoid_prop_drilling" style="color:green; text-align:center;">How to avoid prop drilling?</h2>
 
-🔹 Do not pass data through many components
-🔹 Use **Context API** to share data directly
-🔹 Use `useContext` hook to get data
-🔹 Keep common data in one place
-🔹 Use state manager if app is big (like Redux)
+- Do not pass data through many components
+- Use **Context API** to share data directly
+- Use `useContext` hook to get data
+- Keep common data in one place
+- Use state manager if app is big (like Redux)
 
 **Simple ways:**
 
@@ -660,10 +654,10 @@ To avoid prop drilling, use Context API or shared state instead of passing props
 <h2 id="Context_API" style="color:green; text-align:center;">What is Context API?</h2>
 
 
-🔹 Context API is a React feature
-🔹 It is used to share data with many components
-🔹 It avoids prop drilling
-🔹 Data can be used without passing props step by step
+- Context API is a React feature
+- It is used to share data with many components
+- It avoids prop drilling
+- Data can be used without passing props step by step
 
 
 <hr style="border: 2px solid green;">
@@ -671,10 +665,10 @@ To avoid prop drilling, use Context API or shared state instead of passing props
 <h2 id="Fragment" style="color:green; text-align:center;">What is React Fragment?</h2>
 
 
-🔹 React Fragment is used to group many elements
-🔹 It does not add extra HTML tag to the page
-🔹 It helps return multiple elements from a component
-🔹 It keeps the DOM clean
+- React Fragment is used to group many elements
+- It does not add extra HTML tag to the page
+- It helps return multiple elements from a component
+- It keeps the DOM clean
 
 **Used for:**
 
@@ -696,10 +690,10 @@ React Fragment lets you return many elements without adding extra HTML element t
 <h2 id="Keys_in_React" style="color:green; text-align:center;">What are Keys in React?</h2>
 
 
-🔹 Keys are special values used in lists
-🔹 They help React identify each item
-🔹 Each list item should have a unique key
-🔹 Keys help React update list correctly
+- Keys are special values used in lists
+- They help React identify each item
+- Each list item should have a unique key
+- Keys help React update list correctly
 
 **Used for:**
 
@@ -722,10 +716,10 @@ Keys are unique values given to list items so React can update them correctly.
 <h2 id="keys_important" style="color:green; text-align:center;">Why are keys important in lists?</h2>
 
 
-🔹 Keys help React identify each list item
-🔹 They tell React which item is new, changed, or removed
-🔹 They help React update only the needed items
-🔹 They keep UI correct when list changes
+- Keys help React identify each list item
+- They tell React which item is new, changed, or removed
+- They help React update only the needed items
+- They keep UI correct when list changes
 
 **Without keys:**
 
@@ -765,10 +759,10 @@ Conditional rendering means showing different content based on a condition.
 <h2 id="Lazy_Loading" style="color:green; text-align:center;">What is Lazy Loading in React?</h2>
 
 
-🔹 Lazy loading means loading something **only when needed**
-🔹 React loads components later, not at first
-🔹 It makes the app start faster
-🔹 It saves internet data
+- Lazy loading means loading something **only when needed**
+- React loads components later, not at first
+- It makes the app start faster
+- It saves internet data
 
 **Used for:**
 
@@ -790,10 +784,10 @@ Lazy loading means loading components only when they are needed, not all at once
 
 <h2 id="React.memo" style="color:green; text-align:center;">What is `React.memo`?</h2>
 
-🔹 `React.memo` is used to remember a component
-🔹 It stops the component from re-rendering if props do not change
-🔹 It helps improve performance
-🔹 Used with functional components
+- `React.memo` is used to remember a component
+- It stops the component from re-rendering if props do not change
+- It helps improve performance
+- Used with functional components
 
 **Used for:**
 
@@ -814,10 +808,10 @@ Lazy loading means loading components only when they are needed, not all at once
 
 <h2 id="React.memo" style="color:green; text-align:center;">What is `React.memo`?</h2>
 
-🔹 `React.memo` is used to remember a component
-🔹 It stops the component from re-rendering if props do not change
-🔹 It helps improve performance
-🔹 Used with functional components
+- `React.memo` is used to remember a component
+- It stops the component from re-rendering if props do not change
+- It helps improve performance
+- Used with functional components
 
 **Used for:**
 
@@ -834,10 +828,10 @@ Lazy loading means loading components only when they are needed, not all at once
 
 <h2 id="Code_Splitting" style="color:green; text-align:center;">What is Code Splitting?</h2>
 
-🔹 Code splitting means breaking big code into small parts
-🔹 App loads only needed code first
-🔹 Other code loads later when needed
-🔹 It makes app load faster
+- Code splitting means breaking big code into small parts
+- App loads only needed code first
+- Other code loads later when needed
+- It makes app load faster
 
 ### ✅ Without Code Splitting (all loaded at once)
 
@@ -890,10 +884,10 @@ Code splitting means loading only required code first and rest later to make app
 <h2 id="HOC" style="color:green; text-align:center;">What is Higher-Order Component (HOC)?</h2>
 
 
-🔹 HOC is a function
-🔹 It takes a component as input
-🔹 It returns a new component
-🔹 It is used to reuse logic
+- HOC is a function
+- It takes a component as input
+- It returns a new component
+- It is used to reuse logic
 
 **Simple idea:**
 
@@ -976,10 +970,10 @@ HOC = wrap a component to add extra behavior.
 <h2 id="Pure_Component" style="color:green; text-align:center;">What is a Pure Component?</h2>
 
 
-🔹 Pure component is a component that avoids unnecessary re-render
-🔹 It re-renders only when **props or state change**
-🔹 It compares old and new values before re-render
-🔹 It improves performance
+- Pure component is a component that avoids unnecessary re-render
+- It re-renders only when **props or state change**
+- It compares old and new values before re-render
+- It improves performance
 
 **Used for:**
 
@@ -1001,10 +995,10 @@ A pure component re-renders only when its props or state change, making the app 
 <h2 id="Lifecycle_Method" style="color:green; text-align:center;">What are Lifecycle Method?</h2>
 
 
-🔹 Lifecycle methods are special functions in React
-🔹 They are used in **class components**
-🔹 They run at different times in a component’s life
-🔹 They control what happens when component:
+- Lifecycle methods are special functions in React
+- They are used in **class components**
+- They run at different times in a component’s life
+- They control what happens when component:
 
 * is created
 * is updated
@@ -1086,10 +1080,10 @@ Lifecycle methods are the old way in class components.
 <h2 id="Error_Boundary" style="color:green; text-align:center;">What is Error Boundary?</h2>
 
 
-🔹 Error Boundary is a special React component
-🔹 It is used to catch JavaScript errors in UI
-🔹 It prevents the whole app from crashing
-🔹 It shows a fallback UI when error happens
+- Error Boundary is a special React component
+- It is used to catch JavaScript errors in UI
+- It prevents the whole app from crashing
+- It shows a fallback UI when error happens
 
 **Used for:**
 
@@ -1111,10 +1105,10 @@ Error Boundary is used to catch errors in components and show a safe UI instead 
 
 <h2 id="Suspense" style="color:green; text-align:center;">What is Suspense in React?</h2>
 
-🔹 Suspense is used to show a loading message
-🔹 It waits while something is loading
-🔹 It is used with lazy loading
-🔹 It improves user experience
+- Suspense is used to show a loading message
+- It waits while something is loading
+- It is used with lazy loading
+- It improves user experience
 
 **Used for:**
 
@@ -1136,10 +1130,10 @@ Suspense shows a fallback UI (like “Loading…”) while something is loading 
 
 <h2 id="SSR" style="color:green; text-align:center;">What is Server-Side Rendering (SSR)?</h2>
 
-🔹 SSR means page is created on the **server**
-🔹 Server sends ready HTML to browser
-🔹 Page shows fast to user
-🔹 Good for SEO
+- SSR means page is created on the **server**
+- Server sends ready HTML to browser
+- Page shows fast to user
+- Good for SEO
 
 **How it works (simple):**
 
@@ -1163,10 +1157,10 @@ SSR means the server creates the page and sends ready HTML to the browser.
 <h2 id="CSR" style="color:green; text-align:center;">What is Client-Side Rendering (CSR)?</h2>
 
 
-🔹 CSR means page is created in the **browser**
-🔹 Server sends only empty HTML and JavaScript
-🔹 Browser builds the page using JavaScript
-🔹 Page loads after JavaScript runs
+- CSR means page is created in the **browser**
+- Server sends only empty HTML and JavaScript
+- Browser builds the page using JavaScript
+- Page loads after JavaScript runs
 
 **How it works (simple):**
 
@@ -1190,10 +1184,10 @@ CSR means the browser creates the page using JavaScript, not the server.
 <h2 id="Hydration" style="color:green; text-align:center;">What is Hydration in React?</h2>
 
 
-🔹 Hydration happens after **Server-Side Rendering (SSR)**
-🔹 Server sends ready HTML to browser
-🔹 React adds JavaScript to that HTML
-🔹 Page becomes interactive (buttons work, events work)
+- Hydration happens after **Server-Side Rendering (SSR)**
+- Server sends ready HTML to browser
+- React adds JavaScript to that HTML
+- Page becomes interactive (buttons work, events work)
 
 **Simple idea:**
 
@@ -1260,10 +1254,10 @@ React Router is used to change pages in a React app without reloading the whole 
 
 <h2 id="useNavigate" style="color:green; text-align:center;">What is `useNavigate`?</h2>
 
-🔹 `useNavigate` is a React Router hook
-🔹 It is used to change page using code
-🔹 It helps move from one route to another
-🔹 No page reload happens
+- `useNavigate` is a React Router hook
+- It is used to change page using code
+- It helps move from one route to another
+- No page reload happens
 
 **Used for:**
 
@@ -1285,10 +1279,10 @@ React Router is used to change pages in a React app without reloading the whole 
 
 <h2 id="useLocation" style="color:green; text-align:center;">What is `useLocation`?</h2>
 
-🔹 `useLocation` is a React Router hook
-🔹 It is used to get current URL information
-🔹 It tells which page is open now
-🔹 It gives path and query data
+- `useLocation` is a React Router hook
+- It is used to get current URL information
+- It tells which page is open now
+- It gives path and query data
 
 **Used for:**
 
@@ -1309,10 +1303,10 @@ React Router is used to change pages in a React app without reloading the whole 
 
 <h2 id="Redux" style="color:green; text-align:center;">What is Redux?</h2>
 
-🔹 Redux is a **state management library**
-🔹 It stores application data in one place
-🔹 That place is called **Store**
-🔹 Many components can use the same data
+- Redux is a **state management library**
+- It stores application data in one place
+- That place is called **Store**
+- Many components can use the same data
 
 **Used for:**
 
@@ -1429,10 +1423,10 @@ Context API is a simple way to share data in React.
 <h2 id="Reducer" style="color:green; text-align:center;">What is a Reducer?</h2>
 
 
-🔹 A reducer is a **function**
-🔹 It is used to **update the state**
-🔹 It receives **current state and action**
-🔹 It returns a **new state**
+- A reducer is a **function**
+- It is used to **update the state**
+- It receives **current state and action**
+- It returns a **new state**
 
 **Reducer has three things:**
 
@@ -1473,10 +1467,10 @@ A reducer is a function that changes the state based on an action.
 
 <h2 id="Action_in_Redux" style="color:green; text-align:center;">What is an Action in Redux?</h2>
 
-🔹 An action is a **simple JavaScript object**
-🔹 It tells Redux **what happened**
-🔹 It is used to request a state change
-🔹 It must have a **type**
+- An action is a **simple JavaScript object**
+- It tells Redux **what happened**
+- It is used to request a state change
+- It must have a **type**
 
 **Action contains:**
 
@@ -1515,10 +1509,10 @@ An action is an object that tells Redux what change should happen in the state.
 <h2 id="Middleware_in_Redux" style="color:green; text-align:center;">What is Middleware in Redux?</h2>
 
 
-🔹 Middleware is a function in Redux
-🔹 It runs **between action and reducer**
-🔹 It can change, delay, or handle actions
-🔹 It is used for extra work
+- Middleware is a function in Redux
+- It runs **between action and reducer**
+- It can change, delay, or handle actions
+- It is used for extra work
 
 **Used for:**
 
@@ -1545,10 +1539,10 @@ Middleware is a function that runs between dispatching an action and the reducer
 
 <h2 id="Thunk_in_Redux" style="color:green; text-align:center;">What is Thunk in Redux?</h2>
 
-🔹 Thunk is a **middleware** for Redux
-🔹 It allows you to write **functions** as actions instead of plain objects
-🔹 Used to handle **asynchronous tasks** (like API calls)
-🔹 Helps dispatch actions **after async work is done**
+- Thunk is a **middleware** for Redux
+- It allows you to write **functions** as actions instead of plain objects
+- Used to handle **asynchronous tasks** (like API calls)
+- Helps dispatch actions **after async work is done**
 
 **Used for:**
 
@@ -1594,9 +1588,9 @@ Thunk lets Redux handle async actions by allowing **functions as actions** inste
 <h2 id="Two-Way" style="color:green; text-align:center;">What is Two-Way Data Binding?</h2>
 
 
-🔹 Two-way data binding means **UI and data are connected**
-🔹 When **data changes**, UI updates automatically
-🔹 When **UI changes**, data updates automatically
+- Two-way data binding means **UI and data are connected**
+- When **data changes**, UI updates automatically
+- When **UI changes**, data updates automatically
 
 **Used for:**
 
@@ -1625,9 +1619,9 @@ Two-way data binding keeps **data and UI always in sync**.
 <h2 id="One-Way" style="color:green; text-align:center;">What is One-Way Data Binding?</h2>
 
 
-🔹 One-way data binding means **data flows in one direction only**
-🔹 From **state/props → UI**
-🔹 UI cannot directly change the data
+- One-way data binding means **data flows in one direction only**
+- From **state/props → UI**
+- UI cannot directly change the data
 
 **Used for:**
 
@@ -1711,9 +1705,9 @@ React will:
 
 🎯 **Why batching is useful**
 
-🔹 Reduces unnecessary re-render
-🔹 Makes React **faster**
-🔹 Improves **application performance**
+- Reduces unnecessary re-render
+- Makes React **faster**
+- Improves **application performance**
 
 ---
 
@@ -1753,10 +1747,10 @@ Concurrent rendering lets React handle multiple rendering tasks smoothly without
 
 <h2 id="Strict_Mode" style="color:green; text-align:center;">What is Strict Mode in React?</h2>
 
-🔹 Strict Mode is a tool in React
-🔹 It helps find problems in the code
-🔹 It works only in **development mode**
-🔹 It does not affect production
+- Strict Mode is a tool in React
+- It helps find problems in the code
+- It works only in **development mode**
+- It does not affect production
 
 **What it does:**
 
@@ -1798,10 +1792,10 @@ Strict Mode helps developers find problems and warnings in React code during dev
 
 📘 **Why is `key` not accessible as a prop?**
 
-🔹 `key` is a special attribute in React
-🔹 It is used **only by React** to identify list items
-🔹 React uses it during **reconciliation (DOM update)**
-🔹 Because of this, `key` is **not passed to the component as a prop**
+- `key` is a special attribute in React
+- It is used **only by React** to identify list items
+- React uses it during **reconciliation (DOM update)**
+- Because of this, `key` is **not passed to the component as a prop**
 
 **Simple idea:**
 
@@ -2555,3 +2549,482 @@ if (!Array.prototype.includes) {
 * 📱 App-like behavior in browser
 * 🌐 Works without internet
 * 🧹 No need to install from app store
+
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="Service_Worker" style="color:green; text-align:center;">What is Service Worker?</h2>
+
+* Service Worker is a **JavaScript file that runs in the background**
+* It works **separately from the web page**
+* It helps **cache files and manage network requests**
+* Used mainly in **Progressive Web Apps (PWA)**
+
+**What Service Worker can do**
+
+* 🌐 Enable **offline support**
+* ⚡ Cache website files for faster loading
+* 🔔 Handle **push notifications**
+* 📡 Manage background tasks
+
+**Simple Idea**
+
+* First visit → files are **cached**
+* Next visit → website can **load even without internet**
+
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="SEO_Issue" style="color:green; text-align:center;">What is SEO Issue in React Apps?</h2>
+
+* React apps usually use **client-side rendering (CSR)**
+* The browser loads an **empty HTML page first**
+* Then JavaScript loads the content
+* Search engines may **not see the content immediately**
+
+**Why this causes SEO problems**
+
+* 🔍 Search engines may **not index the page properly**
+* ⏳ Content loads **after JavaScript runs**
+* 📄 Initial HTML has **very little content**
+
+**Solutions**
+
+* ⚙️ Use **Server-Side Rendering (SSR)**
+* 🚀 Use frameworks like **Next.js**
+* 🧾 Use **pre-rendering** for pages
+* 🏷️ Add proper **meta tags and titles**
+
+
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="improve_performance" style="color:green; text-align:center;">How to improve performance in React?</h2>
+
+
+* ⚡ **Use `React.memo`**
+  Prevents unnecessary component re-rendering.
+
+* 🧠 **Use `useMemo`**
+  Memoizes calculated values to avoid repeated calculations.
+
+* 🔁 **Use `useCallback`**
+  Prevents functions from being recreated on every render.
+
+* 📦 **Code Splitting**
+  Load components only when needed using `lazy()`.
+
+* 🧹 **Remove unnecessary re-renders**
+  Keep state only where it is needed.
+
+* 🖼️ **Optimize images and assets**
+  Use smaller image sizes.
+
+* 🚀 **Use production build**
+  Production build is faster and optimized.
+
+
+
+
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="lazy" style="color:green; text-align:center;">What is `lazy()` in React?</h2>
+
+
+
+****
+
+* `lazy()` is a **React function used for code splitting**
+* It **loads components only when they are needed**
+* Helps **reduce the initial bundle size**
+* Improves **application performance**
+
+**Example**
+
+```javascript
+const Home = React.lazy(() => import('./Home'));
+```
+
+**Usage with Suspense**
+
+```javascript
+<Suspense fallback={<p>Loading...</p>}>
+  <Home />
+</Suspense>
+```
+
+**Why `lazy()` is used?**
+
+* 📦 Loads components on demand
+* ⚡ Improves page load speed
+* 🧹 Reduces initial bundle size
+
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="Dynamic_Import" style="color:green; text-align:center;">What is Dynamic Import?</h2>
+
+
+* Dynamic import is a **way to load JavaScript modules when needed**
+* It loads files **at runtime instead of loading everything at the start**
+* Helps **reduce initial bundle size**
+* Improves **application performance**
+
+**Example**
+
+```javascript
+import('./math').then((module) => {
+  console.log(module.add(2, 3));
+});
+```
+
+**Why Dynamic Import is used?**
+
+* 📦 Load modules only when required
+* ⚡ Faster initial page load
+* 🧹 Supports code splitting
+* 🚀 Improves performance in large applications
+
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="Suspense_Fallback" style="color:green; text-align:center;">What is Suspense Fallback in React?</h2>
+
+
+* `fallback` is a **UI shown while a component is loading**
+* It is used inside **`Suspense`**
+* Usually used with **lazy loading components**
+* Shows a **loading message or spinner**
+
+**Example**
+
+```javascript
+const Home = React.lazy(() => import('./Home'));
+
+<Suspense fallback={<p>Loading...</p>}>
+  <Home />
+</Suspense>
+```
+
+**Explanation**
+
+* While **`Home` component is loading**
+* React shows **"Loading..."** from `fallback`
+
+**Why Suspense Fallback is used?**
+
+* ⏳ Shows loading UI
+* 🚀 Improves user experience
+* 📦 Works with lazy loading
+
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="Hydration_Mismatch" style="color:green; text-align:center;">What is Hydration Mismatch?</h2>
+
+* Hydration mismatch happens when **server HTML and client HTML are different**
+* It usually occurs in **server-side rendering (SSR)**
+* React tries to **attach events to existing HTML** from the server
+* If the content is different, React shows a **hydration error**
+
+**Example Problem**
+
+Server render:
+
+```
+<p>Time: 10:00</p>
+```
+
+Client render:
+
+```
+<p>Time: 10:01</p>
+```
+
+➡️ React detects **different content**, so hydration mismatch occurs.
+
+**Why Hydration Mismatch happens?**
+
+* ⏰ Using **dynamic values (date, time)**
+* 🌐 Using **browser-only APIs (window, localStorage)**
+* 🔀 Different data between server and client
+
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="React_Fiber" style="color:green; text-align:center;">What is React Fiber?</h2>
+
+* React Fiber is the **new rendering engine of React**
+* It helps React **update the UI faster**
+* It allows React to **pause, stop, and resume rendering work**
+* Introduced in **React 16**
+
+**Simple Idea**
+
+React Fiber breaks large UI updates into **small tasks**, so the browser does not freeze.
+
+**Example**
+
+```javascript
+function App() {
+  const [count, setCount] = React.useState(0);
+
+  return (
+    <div>
+      <p>{count}</p>
+      <button onClick={() => setCount(count + 1)}>Increase</button>
+    </div>
+  );
+}
+```
+
+When `setCount` runs:
+
+* React Fiber **checks what changed**
+* Updates **only the required part of the UI**
+
+**Why React Fiber is used?**
+
+* ⚡ Faster rendering
+* 🔄 Better UI updates
+* 🧠 Handles large applications efficiently
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="Time_Slicing" style="color:green; text-align:center;">What is Time Slicing in React?</h2>
+
+* Time Slicing is a **React feature for better performance**
+* It **breaks rendering work into small parts**
+* React can **pause and continue rendering later**
+* This keeps the **UI responsive and smooth**
+
+**Simple Idea**
+
+Instead of doing **all work at once**, React does **small tasks step by step**.
+
+**Example**
+
+```javascript
+function App() {
+  const [text, setText] = React.useState("");
+
+  return (
+    <div>
+      <input 
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+      />
+      <BigList text={text} />
+    </div>
+  );
+}
+```
+
+* When the user types in the input
+* React updates the **input first**
+* Then renders the **large list gradually**
+
+**Why Time Slicing is used?**
+
+* ⚡ Improves performance
+* ⌨️ Keeps input and UI responsive
+* 🧠 Handles large UI updates smoothly
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="useTransition" style="color:green; text-align:center;">What is `useTransition` in React?</h2>
+
+* `useTransition` is a **React Hook**
+* It helps **manage slow UI updates**
+* Allows React to **keep the UI responsive**
+* Used for **non-urgent updates**
+
+**Simple Example**
+
+```javascript
+const [isPending, startTransition] = useTransition();
+
+function handleChange(e) {
+  const value = e.target.value;
+
+  startTransition(() => {
+    setSearch(value);
+  });
+}
+```
+
+**Explanation**
+
+* `startTransition()` tells React this update is **not urgent**
+* React can **update important UI first** (like typing)
+* Slow updates happen **in the background**
+
+**Why `useTransition` is used?**
+
+* ⚡ Improves UI performance
+* ⌨️ Keeps typing and input smooth
+* 🧠 Handles slow rendering tasks better
+
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="useDeferredValue" style="color:green; text-align:center;">What is `useDeferredValue` in React?</h2>
+
+* `useDeferredValue` is a **React Hook**
+* It **delays updating a value**
+* Helps keep the **UI fast and responsive**
+* Used when some UI updates are **slow**
+
+**Simple Example**
+
+```javascript id="8z4y0c"
+const [text, setText] = useState("");
+const deferredText = useDeferredValue(text);
+
+<input
+  value={text}
+  onChange={(e) => setText(e.target.value)}
+/>
+
+<List search={deferredText} />
+```
+
+**Explanation**
+
+* `text` updates **immediately when typing**
+* `deferredText` updates **a little later**
+* This keeps **typing smooth even if the list is large**
+
+**Why `useDeferredValue` is used?**
+
+* ⚡ Improves performance
+* ⌨️ Keeps input smooth
+* 🧠 Handles slow UI rendering better
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="useId" style="color:green; text-align:center;">What is `useId` in React?</h2>
+
+* `useId` is a **React Hook**
+* It is used to **generate a unique ID**
+* Helps connect **labels and inputs**
+* Useful for **accessibility**
+
+**Simple Example**
+
+```javascript
+function Form() {
+  const id = useId();
+
+  return (
+    <>
+      <label htmlFor={id}>Name</label>
+      <input id={id} />
+    </>
+  );
+}
+```
+
+**Explanation**
+
+* `useId()` creates a **unique ID**
+* The **label and input are connected** using that ID
+
+**Why `useId` is used?**
+
+* 🆔 Creates unique IDs
+* ♿ Improves accessibility
+* 🔁 Prevents ID conflicts in components
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="useImperativeHandle" style="color:green; text-align:center;">What is `useImperativeHandle` in React?</h2>
+
+* `useImperativeHandle` is a **React Hook**
+* It is used with **`forwardRef`**
+* It allows a **parent component to control a child component**
+* It lets the parent **access specific functions or values**
+
+**Simple Example**
+
+```javascript
+const Input = React.forwardRef((props, ref) => {
+  const inputRef = React.useRef();
+
+  React.useImperativeHandle(ref, () => ({
+    focusInput() {
+      inputRef.current.focus();
+    }
+  }));
+
+  return <input ref={inputRef} />;
+});
+```
+
+**Using the Component**
+
+```javascript
+const ref = React.useRef();
+
+<Input ref={ref} />
+
+<button onClick={() => ref.current.focusInput()}>
+  Focus Input
+</button>
+```
+
+**Why `useImperativeHandle` is used?**
+
+* 🎯 Control child component from parent
+* 🔁 Expose specific methods
+* 🧩 Works with `forwardRef`
+
+
+<hr style="border: 2px solid green;">
+
+<h2 id="useSyncExternalStore" style="color:green; text-align:center;">What is `useSyncExternalStore` in React?</h2>
+
+* `useSyncExternalStore` is a **React Hook**
+* It is used to **connect React with external data stores**
+* It keeps **React state in sync with external data**
+* Used with **Redux or other external stores**
+
+**Simple Example**
+
+```javascript
+function subscribe(callback) {
+  window.addEventListener("resize", callback);
+  return () => window.removeEventListener("resize", callback);
+}
+
+function getSnapshot() {
+  return window.innerWidth;
+}
+
+const width = useSyncExternalStore(subscribe, getSnapshot);
+```
+
+**Explanation**
+
+* React **listens to external changes**
+* When the value changes, **React updates the UI**
+
+**Why `useSyncExternalStore` is used?**
+
+* 🔄 Sync React with external data
+* ⚡ Keep UI updated
+* 🧠 Useful for state management libraries
