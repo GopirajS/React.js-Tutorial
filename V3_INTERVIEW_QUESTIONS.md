@@ -804,6 +804,63 @@ To avoid prop drilling, use Context API or shared state instead of passing props
 - Data can be used without passing props step by step
 
 
+```javascript
+import React, { createContext, useContext, useState } from 'react';
+
+// 1. Create the Context
+const ThemeContext = createContext();
+
+// 2. Provider Component (Wrapped around app/components)
+export const ThemeProvider = ({ children }) => {
+  const [theme, setTheme] = useState('light'); // State for context
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
+  };
+
+  return (
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+};
+
+// 3. Component that Consumes the Context
+const ThemeButton = () => {
+  const { theme, toggleTheme } = useContext(ThemeContext);
+  return (
+    <button
+      onClick={toggleTheme}
+      style={{
+        background: theme === 'light' ? '#fff' : '#333',
+        color: theme === 'light' ? '#000' : '#fff',
+        padding: '10px 20px',
+        border: '1px solid #ccc',
+        cursor: 'pointer'
+      }}
+    >
+      Toggle to {theme === 'light' ? 'dark' : 'light'} Mode
+    </button>
+  );
+};
+
+// 4. Main App (Provides Context)
+const App = () => {
+  return (
+    <ThemeProvider>
+      <div style={{ padding: '20px' }}>
+        <h1>Context API Example</h1>
+        <ThemeButton />
+      </div>
+    </ThemeProvider>
+  );
+};
+
+export default App;
+
+```
+
+
 <hr style="border: 2px solid green;">
 
 <h2 id="Fragment" style="color:green; text-align:center;">What is React Fragment?</h2>
@@ -924,6 +981,29 @@ Conditional rendering means showing different content based on a condition.
 Lazy loading means loading components only when they are needed, not all at once.
 
 
+```javascript
+import React, { Suspense, lazy } from 'react';
+
+// 1. Define the lazy-loaded component (must be a default export)
+const HeavyComponent = lazy(() => import('./HeavyComponent'));
+
+function App() {
+  return (
+    <div>
+      <h1>My Application</h1>
+      
+      {/* 2. Wrap the lazy component in Suspense with a fallback UI */}
+      <Suspense fallback={<div>Loading component...</div>}>
+        <HeavyComponent />
+      </Suspense>
+    </div>
+  );
+}
+
+export default App;
+
+```
+
 <hr style="border: 2px solid green;">
 
 <h2 id="React.memo" style="color:green; text-align:center;">What is `React.memo`?</h2>
@@ -939,34 +1019,37 @@ Lazy loading means loading components only when they are needed, not all at once
 * Heavy UI components
 * Avoid extra re-render
 
-**Simple idea:**
-
-* Props same → no re-render
-* Props changed → re-render
 
 🧠 **In short:**
 `React.memo` prevents a component from re-rendering when its props have not changed.
 
+```javascript
+import React, { useState, memo } from 'react';
 
-<hr style="border: 2px solid green;">
+// 1. Wrap the component with memo()
+const ChildComponent = memo(({ name }) => {
+  console.log("Child rendered!");
+  return <p>Hello, {name}!</p>;
+});
 
-<h2 id="React.memo" style="color:green; text-align:center;">What is `React.memo`?</h2>
+export default function ParentComponent() {
+  const [count, setCount] = useState(0);
+  const [name, setName] = useState("User");
 
-- `React.memo` is used to remember a component
-- It stops the component from re-rendering if props do not change
-- It helps improve performance
-- Used with functional components
+  return (
+    <div>
+      <h3>Count: {count}</h3>
+      <button onClick={() => setCount(count + 1)}>Increment Count</button>
+      
+      {/* Changing 'count' won't re-render ChildComponent because 'name' stays the same */}
+      <ChildComponent name={name} />
+      
+      <button onClick={() => setName("New User")}>Change Name</button>
+    </div>
+  );
+}
 
-**Used for:**
-
-* Child components
-* Heavy UI components
-* Avoid extra re-render
-
-
-🧠 **In short:**
-`React.memo` prevents a component from re-rendering when its props have not changed.
-
+```
 
 <hr style="border: 2px solid green;">
 
@@ -1132,6 +1215,18 @@ HOC = wrap a component to add extra behavior.
 
 🧠 **In short:**
 A pure component re-renders only when its props or state change, making the app faster.
+
+```javascript
+import React, { memo } from 'react';
+
+const MyFunctionalComponent = memo(({ name }) => {
+  console.log("Memoized Component Rendered");
+  return <h1>Hello, {name}!</h1>;
+});
+
+export default MyFunctionalComponent;
+
+```
 
 
 <hr style="border: 2px solid green;">
@@ -1370,6 +1465,40 @@ Hydration means React adds JavaScript to server-made HTML so the page can work l
 🧠 **In short:**
 React Router is used to change pages in a React app without reloading the whole page.
 
+```javascript
+import React from 'react';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+
+// 1. Define Page Components
+const Home = () => <h2>Home Page</h2>;
+const About = () => <h2>About Page</h2>;
+const NotFound = () => <h2>404 - Page Not Found</h2>;
+
+function App() {
+  return (
+    <BrowserRouter>
+      {/* 2. Navigation Bar */}
+      <nav style={{ padding: "10px", background: "#f4f4f4" }}>
+        <Link to="/" style={{ marginRight: "10px" }}>Home</Link>
+        <Link to="/about">About</Link>
+      </nav>
+
+      {/* 3. Route Configuration */}
+      <div style={{ padding: "20px" }}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          {/* Catch-all route for 404 pages */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
+  );
+}
+
+export default App;
+
+```
 
 <hr style="border: 2px solid green;">
 
@@ -1392,6 +1521,25 @@ React Router is used to change pages in a React app without reloading the whole 
 
 🧠 **In short:**
 `useParams` is used to read values from the URL in React Router.
+
+```javascript
+
+import { useParams } from 'react-router-dom';
+// URL Localhost:3000/user/123
+function UserProfile() {
+  // 1. Call the hook to get an object of URL parameters
+  const { id } = useParams(); 
+
+  return (
+    <div>
+      <h1>User Profile</h1>
+      <p>Now showing details for User ID: {id}</p> \
+  
+    </div>
+  );
+}
+
+```
 
 
 <hr style="border: 2px solid green;">
@@ -1438,6 +1586,24 @@ React Router is used to change pages in a React app without reloading the whole 
 
 * URL = `/profile`
 * `useLocation` gives `/profile`
+
+```javascript
+import React from 'react';
+import { useLocation } from 'react-router-dom';
+
+function CurrentPageInfo() {
+  const location = useLocation();
+
+  return (
+    <div>
+      <p>Current Path: {location.pathname}</p>
+      <p>Query String: {location.search}</p>
+      <p>Unique Key: {location.key}</p>
+    </div>
+  );
+}
+
+```
 
 🧠 **In short:**
 `useLocation` is used to get current URL details in React Router.
@@ -1588,12 +1754,32 @@ Context API is a simple way to share data in React.
 **Simple example:**
 
 ```javascript
-function counter(state = 0, action) {
-  if (action.type === "INCREMENT") {
-    return state + 1;
+import React, { useReducer } from 'react';
+
+const initialState = { count: 0 };
+
+// Reducer function handles state transitions based on action type
+function reducer(state, action) {
+  switch (action.type) {
+    case 'increment': return { count: state.count + 1 };
+    case 'decrement': return { count: state.count - 1 };
+    case 'reset': return initialState;
+    default: return state;
   }
-  return state;
 }
+
+function Counter() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  return (
+    <div>
+      <p>Count: {state.count}</p>
+      <button onClick={() => dispatch({ type: 'increment' })}>+</button>
+      <button onClick={() => dispatch({ type: 'decrement' })}>-</button>
+    </div>
+  );
+}
+
 ```
 
 **Used for:**
